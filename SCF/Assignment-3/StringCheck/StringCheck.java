@@ -1,16 +1,24 @@
 import java.io.IOException;
 
-
 public class StringCheck {
 	
+	//	method to validate an input string
 	public boolean inputValidation(String firstString) {
-		if(true ) {
-			return true;
+		for(int i = 0; i < firstString.length(); i++ ) {
+			if((firstString.charAt(i) >= 65 && firstString.charAt(i) <= 90) 
+					|| (firstString.charAt(i) >= 97 && firstString.charAt(i) <=122) || firstString.charAt(i) == (char)32) {
+				return true;
+			}
 		}
 		return false;
 	}
+	
+//	method to validate two input strings
 	public boolean inputValidation(String firstString, String secondString) {
-		if(true ) {
+		boolean b1 = inputValidation(firstString);
+		boolean b2 = inputValidation(secondString);
+		
+		if(b1 && b2) {
 			return true;
 		}
 		return false;
@@ -26,6 +34,7 @@ public class StringCheck {
 	}
 	*/
 	
+	//	method to check if two strings are equal
 	public int checkEquality(String firstString, String secondString) throws IOException {
 		boolean valid= inputValidation(firstString, secondString);
 		if(valid == false){
@@ -47,6 +56,7 @@ public class StringCheck {
 		return 0;
 	}
 	
+	//	method to find the reverse of a string
 	public String findReverse(String firstString) throws IOException {
 		boolean valid= inputValidation(firstString);
 		if(valid == false){
@@ -61,6 +71,7 @@ public class StringCheck {
 		return reverse;
 	}
 
+	//	method to change the case of all the letters of a string
 	public String changeCase(String firstString) throws IOException{
 		boolean valid= inputValidation(firstString);
 		if(valid == false){
@@ -78,35 +89,32 @@ public class StringCheck {
 		return newString;
 	}
 	
+	//	method to find the largest word in a string
 	public String findLargestWord(String firstString) throws IOException{
+		
 		boolean valid= inputValidation(firstString);
 		if(valid == false){
 			throw new IOException("Invalid Inputs !!!!!");
 		}
 		
-		int count = 0;
-		int maxLength = 0;
-		int index = 0;
-		int position = 0;
-		for(index = 0; index < firstString.length(); index++) {
-			while((firstString.charAt(index) != ' ') || (firstString.charAt(index) != '\0')) {
-				count++;
-			}
-			if(maxLength < count) {
-				maxLength = count;
-				position = index;
-			}
-			count = 0;
-		}
+		char stringArray[] = firstString.toCharArray();
+		int beginIndex = 0, endIndex = 0, maxLength = 0, count = 0;
 		
-		String largestWord = "";
-		
-		while(index < (position + maxLength)) {
-			largestWord = largestWord + (firstString.charAt(index));
-		}
-		return "";
+		for (int i = 0; i < firstString.length(); i++) {
+        	int j = i;
+        	while ((i + count) < firstString.length() && stringArray[j] != ' ') {
+            	count++;
+            	j++;
+            }
+            if (maxLength <= count) {
+            	maxLength = count;
+            	beginIndex = i;
+           		endIndex = i + count;
+           	}
+            i = i + count;
+           	count = 0;
+      	}
+        return firstString.substring(beginIndex, endIndex);
+         	
 	}
-
-
-
 }

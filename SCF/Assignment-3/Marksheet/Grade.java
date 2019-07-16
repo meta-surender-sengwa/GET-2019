@@ -13,6 +13,7 @@ public class Grade {
 		return false;
 	}
 	
+	//	method to calculate average grade of all the students
 	public double calculateAgerage(int noOfStudents, int gradeSheet[]) throws IOException{
 		boolean valid= inputValidation(noOfStudents, gradeSheet);
 		if(valid == false){
@@ -27,6 +28,7 @@ public class Grade {
 		return average;
 	}
 	
+	//	method to maximum grade among all the students
 	public int calculateMaximum(int noOfStudents, int gradeSheet[]) throws IOException{
 		boolean valid= inputValidation(noOfStudents, gradeSheet);
 		if(valid == false){
@@ -42,6 +44,7 @@ public class Grade {
 		return maximum;
 	}
 
+	//	method to minimum grade among all the students
 	public int calculateMinimum(int noOfStudents, int gradeSheet[]) throws IOException{
 		boolean valid= inputValidation(noOfStudents, gradeSheet);
 		if(valid == false){
@@ -57,6 +60,7 @@ public class Grade {
 		return minimum;
 	}
 	
+	//	method to find the percentage of students passed
 	public double calculatePercentagePassed(int noOfStudents, int gradeSheet[]) throws IOException{
 		boolean valid= inputValidation(noOfStudents, gradeSheet);
 		if(valid == false){

@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class TestStringCheck {
+public class TestSTringCheck {
 
 	public static void main(String[] args) {
 		
@@ -11,7 +11,7 @@ public class TestStringCheck {
 		String string2 = ""; 
 		
 		do{
-
+			System.out.println("\n");
 			System.out.println("MENU : ");
 			System.out.println("1. Check if the two strings are equal");
 			System.out.println("2. find reverse of a string");
@@ -50,11 +50,11 @@ public class TestStringCheck {
 			
 			case 2: {
 				try {
-					System.out.print("Enter first string : ");
+					System.out.print("Enter a string : ");
 					string1 = userInput.next(); 
 					
 					String reverse = string.findReverse(string1);
-					System.out.print("Reverse of the string is " + reverse +"\n");
+					System.out.print("Reverse of the string is "  + reverse);
 				}
 				catch(Exception Ex) {
 					System.out.println(Ex);
@@ -64,7 +64,7 @@ public class TestStringCheck {
 			
 			case 3: {
 				try {
-					System.out.print("Enter first string : ");
+					System.out.print("Enter a string : ");
 					string1 = userInput.next(); 
 					
 					String newString = string.changeCase(string1);
@@ -78,11 +78,13 @@ public class TestStringCheck {
 			
 			case 4: {
 				try {
-					System.out.print("Enter first string : ");
-					string1 = userInput.nextLine(); 
+					
+					System.out.print("Enter a string : ");
+					userInput.nextLine();
+					string1 = userInput.nextLine();
 					
 					String largestWord = string.findLargestWord(string1);
-					System.out.print("Largest word of the input string is " + largestWord + "\n");
+					System.out.print("Largest word of the input string is " + largestWord);
 				}
 				catch(Exception Ex) {
 					System.out.println(Ex);
