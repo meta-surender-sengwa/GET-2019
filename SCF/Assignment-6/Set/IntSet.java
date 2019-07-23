@@ -44,7 +44,7 @@ public final class IntSet {
 		for (int index = 0; index < set.length; index++) {
 			size = size + 1;
 		}
-		return size-1;
+		return size;
 	}
 
 	/**
