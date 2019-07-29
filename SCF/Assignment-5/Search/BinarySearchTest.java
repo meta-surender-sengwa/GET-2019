@@ -40,7 +40,7 @@ public class BinarySearchTest {
 	
 	@Test
 	public void test() {
-		assertEquals(expectedResult,search.setBoundayIndex(inputArray, numberToSearch));
+		assertEquals(expectedResult,search.binarySearch(inputArray, numberToSearch));
 	}
 
 }
