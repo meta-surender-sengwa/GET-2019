@@ -1,36 +1,38 @@
 package dictionary;
 
 /**
- * @author Surender
- * This class represent node in binary search tree
+ *
+ * This class represents node in binary search tree
+ * @author Surender Sengwa
+ * 
  */
 public class Node {
 
 	private final String key;
 	private final String value;
 	
-	public Node leftChild;
-	public Node rightChild;
+	public Node leftChildNode;
+	public Node rightChildNode;
 	
 	public Node(String key, String value) {
 		this.key = key;
 		this.value = value;
 	}
 
-	public Node getLeftChild() {
-		return leftChild;
+	public Node getLeftChildNode() {
+		return leftChildNode;
 	}
 
-	public void setLeftChild(Node leftChild) {
-		this.leftChild = leftChild;
+	public void setLeftChildNode(Node leftChildNode) {
+		this.leftChildNode = leftChildNode;
 	}
 
-	public Node getRightChild() {
-		return rightChild;
+	public Node getRightChildNode() {
+		return rightChildNode;
 	}
 
-	public void setRightChild(Node rightChild) {
-		this.rightChild = rightChild;
+	public void setRightChildNode(Node rightChildNode) {
+		this.rightChildNode = rightChildNode;
 	}
 
 	public String getKey() {

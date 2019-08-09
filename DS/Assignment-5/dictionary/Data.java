@@ -1,8 +1,8 @@
 package dictionary;
 
 /**
- * @author Surender
  * This class is data container for JSON String parsing
+ * @author Surender Sengwa
  */
 public class Data {
 
