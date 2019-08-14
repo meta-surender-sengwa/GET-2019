@@ -1,0 +1,8 @@
+﻿
+-- ALTER TABLE images SET FOREIGN KEY CHECKS = 0;
+-- ALTER TABLE images DROP FOREIGN KEY productID;
+
+ALTER TABLE images DROP INDEX productID;
+
+DROP TABLE product;
+
