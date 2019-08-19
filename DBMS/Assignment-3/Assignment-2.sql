@@ -193,14 +193,15 @@ UPDATE address SET house = "a59", street = "jhotwara", city = "jaipur", state = 
 
 -- Assignment-2
 
-# (1)
+#(1).Display the list of products (Id, Title, Count of Categories) which fall in more than one Categories.
+
 SELECT DISTINCT p.id, p.name, ( SELECT COUNT(*) 
                                 FROM productSubCategory AS psc 
                                 WHERE psc.productId = p.id)
 FROM product AS p;
 
 
-# (2)
+#(2).
 
 SELECT price, count(*) no_of_products
 FROM (SELECT CASE
@@ -212,15 +213,9 @@ FROM (SELECT CASE
 GROUP BY price;
 
 
-# (3)
+#(3).Display the Categories along with number of products under each category.
 
 SELECT c.name AS category, count(*) AS no_of_products
 FROM category AS c, subCategory AS sc, productSubCategory AS psc
 WHERE c.id = sc.categoryId AND sc.id = psc.subCategoryId
 GROUP BY c.name;
-
-
-
-
-
-

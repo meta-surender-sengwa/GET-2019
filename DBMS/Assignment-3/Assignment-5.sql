@@ -190,65 +190,42 @@ UPDATE address SET house = "a59", street = "jhotwara", city = "jaipur", state = 
 
 
 
--- Assignment-3
 
-#(1).Display Shopper’s information along with number of orders he/she placed during last 30 days.
+# Assignment-5
 
-SELECT u.name AS shopper, COUNT(*) AS orders
-FROM users AS u, orders AS o, usersOrder AS uo
-WHERE o.id = uo.orderId AND uo.userId = u.id
-GROUP BY shopper;
+#(1).Create a view displaying the order information (Id, Title, Price, Shopper’s name, Email, Orderdate, Status)
+#    with latest ordered items should be displayed first for last 60 days.
 
+SELECT DISTINCT p.id, p.name AS product, p.price, u.name AS user, u.email, DATE(o.date) AS date, os.status
+FROM product AS p, users AS u, orders AS o, orderStatus AS os, usersOrder AS uo
+WHERE o.id = os.id AND o.productId = p.id AND uo.orderId = o.id AND uo.userId = u.id;
 
-#(2).Display the top 10 Shoppers who generated maximum number of revenue in last 30 days.
-
-SELECT u.name AS shopper, SUM(o.totalAmount) AS revenue
-FROM users AS u, orders AS o, usersOrder AS uo
-WHERE o.id = uo.orderId AND uo.userId = u.id AND DATEDIFF(CURDATE(), o.date) < 30
-GROUP BY shopper
-ORDER BY revenue DESC
-LIMIT 10;
+CREATE VIEW shopFrontView
+AS
+SELECT DISTINCT p.id, p.name AS product, p.price, u.name AS user, u.email, DATE(o.date) AS date, os.status
+FROM product AS p, users AS u, orders AS o, orderStatus AS os, usersOrder AS uo
+WHERE o.id = os.id AND o.productId = p.id AND uo.orderId = o.id AND uo.userId = u.id;
 
 
-#(3).Display top 20 Products which are ordered most in last 60 days along with numbers.
+#(2).Use the above view to display the Products(Items) which are in ‘shipped’ state.
 
-SELECT p.name 
-FROM product AS p, orders AS o
-WHERE o.productId = p.id AND DATEDIFF(CURDATE(), o.date) < 30
-GROUP BY p.name
-ORDER BY COUNT(*) DESC
-LIMIT 20;
+SELECT product
+FROM shopFrontView
+WHERE status = "shipped";
 
 
-#(4).Display Monthly sales revenue of the StoreFront for last 6 months. It should display each month’s sale.
+#(3).Use the above view to display the top 5 most selling products.
 
-SELECT MONTHName(date) AS Month, SUM(totalAmount) AS "Total Monthly revenue"
-FROM orders
-GROUP BY MONTH(date), YEAR(date)
-ORDER BY date DESC
-LIMIT 6;
+SELECT product
+FROM shopFrontView
+GROUP BY product 
+ORDER BY COUNT(*)
+LIMIT 5;
 
 
 
-#(5).Mark the products as Inactive which are not ordered in last 90 days.
-
-SELECT name 
-FROM product
-WHERE id NOT IN
-    (SELECT DISTINCT productId 
-     FROM orders
-     WHERE  DATEDIFF(CURDATE(), date) < 90
-    );
 
 
-#(6).Given a category search keyword, display all the Products present in this category/categories. 
 
-SELECT DISTINCT product.name
-FROM product, category, subCategory, productSubCategory
-WHERE product.id = productSubCategory.productId
-AND productSubCategory.SubCategoryId = SubCategory.id
-AND SubCategory.categoryId = category.id
-AND category.name = "mobile";
 
-#(7).Display top 10 Items which were cancelled most.
 
