@@ -250,5 +250,15 @@ AND productSubCategory.SubCategoryId = SubCategory.id
 AND SubCategory.categoryId = category.id
 AND category.name = "mobile";
 
+
 #(7).Display top 10 Items which were cancelled most.
+
+SELECT product.name
+FROM product, orders, orderStatus
+WHERE product.id = orders.productId 
+AND orders.id = orderStatus.id
+AND orderStatus.status = "Cancelled"
+GROUP BY product.name
+ORDER BY COUNT(*)
+LIMIT 10;
 
