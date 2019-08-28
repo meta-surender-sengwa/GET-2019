@@ -2,13 +2,14 @@
 <html>
 
 <head>
-	<title>Metacube parking system</title>
+	<title>Metacube Parking System</title>
 	<style>
 		span {
 			width: 50%;
 			padding: 10px 5px;
 		}
 	</style>
+	
 	<script>
 		function validation() {
 			var name = document.forms["RegForm"]["Name"];
@@ -16,9 +17,45 @@
 			var phone = document.forms["RegForm"]["Contact"];
 			var password = document.forms["RegForm"]["Password"];
 			var Confirm = document.forms["RegForm"]["Conpassword"];
+			var regex = new RegExp("\\d");
+			var filtercontact = new RegExp('([a-zA-Z!@#$%^&*()_+])');
+			var filterPassword = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})");
+
+            if (password.value.length < 8) {
+				window.alert("Password should be minimum 8 character");
+				password.focus();
+				return false;
+			}
+			if(name.value.length <= 2) {
+				window.alert("Name should be greater than 2 chracter");
+				name.focus();
+				return false;
+				
+			}
+			if (filterPassword.test(password)){
+				window.alert("Insert Valid password format eg Abc@123");
+				password.focus();
+				return false;
+
+			}
+			if (phone.value.length != 10 ) {
+				window.alert("Phone number should be of 10 digit");
+				phone.focus();
+				return false;
+			}
 			if (name.value == "") {
 				window.alert("Please enter your name.");
 				name.focus();
+				return false;
+			}
+			if (regex.test(name.value)) {
+				window.alert("Please dont enter numeric in name");
+				name.focus();
+				return false;
+			}
+			if (filtercontact.test(phone.value)) {
+				window.alert("Please enter only numeric in contacts");
+				phone.focus();
 				return false;
 			}
 
@@ -28,7 +65,7 @@
 				return false;
 			}
 
-			if (email.value.indexOf("@", 0) < 0) {
+			if (email.value.indexOf("@") < 0) {
 				window.alert("Please enter a valid e-mail address.");
 				email.focus();
 				return false;
@@ -74,6 +111,7 @@
 			document.getElementById("application").innerHTML = "";
 			}
 		}
+
 		function validation2(){
 			var name = document.forms["vehicleform"]["vname"];
 		    var vnumber = document.forms["vehicleform"]["number"];
@@ -87,182 +125,126 @@
 				vnumber.focus();
 				return false;
 			}
-		    
 			return true;
-			
 		}
-
-		function price() {
-			var flag = validation2();
-			if(flag == true) {
-				document.getElementById("curr_type").style.display= "block";
-				var type = document.getElementById("vehicle_type").value;
-				document.getElementById("vehicle").style.display ="none";
-				document.getElementById("btns").style.display = "block";
-			if (type == "cycle") {
-				document.getElementById("cycle_btn").style.display = "block";
-			} else if (type == "bike") {
-				document.getElementById("bike_btn").style.display = "block";
-			} else {
-				document.getElementById("car_btn").style.display = "block";
-			}
-			document.getElementById("bill").style.display = "block";
-			
-			
-			}
-		}
-
-		function bill_cal() {
-
-			var ve_type = document.getElementById("vehicle_type").value;
-			var ele = document.getElementsByName(ve_type);
-			for (i = 0; i < ele.length; i++) {
-				if (ele[i].checked)
-					document.getElementById("show_price").innerHTML
-						= "Total bill is: " + ele[i].value;
-			}
-		}
-
-			function change_currency() {
-				var ctype = document.getElementById("currecy_type").value;
-				if(ctype == "USD") {
-					document.getElementById("5").value="5usd";
-				}
-				
-			}
-		
-
 	</script>
-
 </head>
 
 <body>
 	<div align="center">
-		<div>
-			<h1>Metacube Parking system</h1>
-		</div>
+		<h1>Metacube Parking system</h1>
+	</div>
+
+	<div align="center">
 		<div id="application">
 			<h2>Employee Registration form</h2>
 			<form action="" method="POST" name="RegForm" onsubmit="return false" >
 				<span><input placeholder="Name" type="text" name="Name" required></br></br></span>
-				<div>
+				<div><span>Gender</span>
 					<input type="radio" id="male" name="gender" value="male" checked>
-					<label for="male" id="male">Male</label>
+					<label for="male">Male</label>
 					<input type="radio" id="female" name="gender" value="female">
 					<label for="female">Female</label>
 				</div><br>
-
 				<span> <input placeholder="Email" name="Email" type="email" required></br></br></span>
-				<span> <input placeholder="Contact Number" name="Contact" type="text" maxlength="10" size="20" required
-						size="10"></br></br></span>
-				<span> <input type="password" placeholder="Password" name="Password" minlength="8" required></br></br></span>
-				<span> <input type="password" placeholder="Confirm Password" name="Conpassword"
-						required></br></br></span>
+				<span> <input placeholder="Contact Number" name="Contact" type="text" maxlength="10" required></br></br></span>
+				<span> <input type="password" placeholder="Password" name="Password"  pattern=".{8,}" required></br></br></span>
+				<span> <input type="password" placeholder="Confirm Password" name="Conpassword" required></br></br></span>
 				<span> <input type="submit" value="Submit" onclick="collapse()"></br></br></span>
-
 			</form>
-
 		</div>
 	</div>
 
-	<div id="vehicle" align="center">
-		<h2>
-			Vehicle registration form
-		</h2>
+	<div id="vehicle" align="center" style="display: none;"> 
+		<h2>Vehicle Registration Form</h2>
 		<form action="" method="POST" name="vehicleform" onsubmit="return false">
-			<span> <input placeholder="Vehicle Name" name="vname" type="text" required></br><br></span>
-			<span> Choose Vehicle Type:<br><br>
+			<span><input placeholder="Vehicle Name" name="vname" type="text" required></br><br></span>
+			<span>Choose Vehicle Type:<br><br>
 				<select id="vehicle_type">
 					<option value="cycle">Cycle</option>
 					<option value="bike">Bike</option>
 					<option value="car">Car</option>
-
 				</select>
 			</span></br></br>
 			<span> <input placeholder="Vehicle Number" name="number" type="text" required></br></br></span>
 			<span> <input placeholder="EmployeeId" type="number" name="empid" required></br></br></span>
-			<span><textarea rows="5" cols="20" placeholder="Identification"></textarea><br><br></span>
-
+			<span><textarea rows="4" cols="20" placeholder="Identification" required></textarea><br><br></span>
 			<span> <input type="submit" value="Submit" onclick="price()"></br></span>
 
 		</form>
-
 	</div>
-	<div id="btns"  align="center">
-        <div id="curr_type" hidden>
-					<span> Choose Currency Type:<br><br>
-						<select id="currecy_type" onchange="change_currency()">
-							<option value="INR" selected>INR</option>
-							<option value="USD">USD</option>
-							<option value="YEN">YEN</option>
-						</select>
-			
+
+	<div id="btns" align="center">
+        <div id="curr_type" >
+			<span> Choose Currency Type:<br><br>
+				<select id="currecy_type" onchange="change_currency()">
+					<option value="INR" selected>INR</option>
+					<option value="USD">USD</option>
+					<option value="YEN">YEN</option>
+			</select>	
 		</div>
-       
 
-		<div id="cycle_btn" hidden>
+		<div id="cycle" hidden>
 			<p>Choose your plan</p>
-
-			<div>
+			<div class="p" > 
 				<input type="radio" id="5" name="cycle" value="5" checked>
-				<label for="5">5</label>
+				<label class="p1">5</label>
 			</div>
 
-			<div>
+			<div class="p">
 				<input type="radio" id="100" name="cycle" value="100">
-				<label for="100">100</label>
+				<label class="p1">100</label>
 			</div>
 
-			<div>
+			<div class="p">
 				<input type="radio" id="500" name="cycle" value="500">
-				<label for="500">500</label>
+				<label class="p1">500</label>
 			</div>
 
 		</div>
-		<div id="bike_btn" hidden>
+		<div id="bike" hidden>
 			<p>Choose your plan</p>
-			<div>
+			<div class="p">
 				<input type="radio" id="10" name="bike" value="10" checked>
-				<label for="5">10</label>
+				<label class="p1">10</label>
 			</div>
 
-			<div>
+			<div class="p">
 				<input type="radio" id="200" name="bike" value="200">
-				<label for="200">200</label>
+				<label class="p1">200</label>
 			</div>
 
-			<div>
+			<div class="p"> 
 				<input type="radio" id="1000" name="bike" value="1000">
-				<label for="1000">1000</label>
+				<label class="p1">1000</label>
 			</div>
 
 		</div>
-		<div id="car_btn" hidden>
+		<div id="car" hidden>
 			<p>Choose your plan</p>
-			<div>
+			<div class="p">
 				<input type="radio" id="20" name="car" value="20" checked>
-				<label for="20">20</label>
+				<label class="p1">20</label>
 			</div>
 
-			<div>
+			<div class="p">
 				<input type="radio" id="500" name="car" value="500">
-				<label for="500">500</label>
+				<label class="p1">500</label>
 			</div>
 
-			<div>
+			<div class="p">
 				<input type="radio" id="3500" name="car" value="3500">
-				<label for="3500">3500</label>
+				<label class="p1">3500</label>
 			</div>
 
 		</div>
 	</div>
+
 	<div id="bill" align="center" hidden>
 		<button type="submit" value="submit" onclick="bill_cal()">Get your pass</button>
 	</div>
 
-	<h3 id="show_price" align="center">
-
-	</h3>
+	<h3 id="show_price" align="center"></h3>
 </body>
 
 </html>
