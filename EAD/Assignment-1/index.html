@@ -9,7 +9,9 @@
 			padding: 10px 5px;
 		}
 	</style>
-	<script src="parking.js"></script>
+	<script src="parking.js">
+		
+	</script>
 
 </head>
 
@@ -21,23 +23,28 @@
 		<div id="application">
 			<h2>Employee Registration form</h2>
 			<form action="" method="POST" name="RegForm" onsubmit="return false" >
-				<input placeholder="Name" type="text" name="Name" required></br></br>
+				<span><input placeholder="Name" type="text" name="Name" required></br></br></span>
 				<div>
 					<input type="radio" id="male" name="gender" value="male" checked>
-					<label for="male">Male</label>
+					<label for="male" id="male">Male</label>
 					<input type="radio" id="female" name="gender" value="female">
 					<label for="female">Female</label>
 				</div><br>
-				<input placeholder="Email" name="Email" type="email" required></br></br>
-				<input placeholder="Contact Number" name="Contact" type="text" maxlength="10" size="20" required size="10"></br></br>
-				<input type="password" placeholder="Password" name="Password"  pattern=".{8,}" required></br></br>
-				<input type="password" placeholder="Confirm Password" name="conPassword" required></br></br>
-				<input type="submit" value="Submit" onclick="collapse()"></br></br>
+
+				<span> <input placeholder="Email" name="Email" type="email" required></br></br></span>
+				<span> <input placeholder="Contact Number" name="Contact" type="text" maxlength="10" size="20" required
+						size="10"></br></br></span>
+				<span> <input type="password" placeholder="Password" name="Password"  pattern=".{8,}" required></br></br></span>
+				<span> <input type="password" placeholder="Confirm Password" name="Conpassword"
+						required></br></br></span>
+				<span> <input type="submit" value="Submit" onclick="registerUser()"></br></br></span>
+
 			</form>
+
 		</div>
 	</div>
 
-	<div id="vehicle" align="center" style="display: none;">
+	<div id="vehicle" align="center" style="display:none;">
 		<h2>
 			Vehicle registration form
 		</h2>
@@ -48,26 +55,29 @@
 					<option value="cycle">Cycle</option>
 					<option value="bike">Bike</option>
 					<option value="car">Car</option>
+
 				</select>
 			</span></br></br>
 			<span> <input placeholder="Vehicle Number" name="number" type="text" required></br></br></span>
-			<span> <input placeholder="EmployeeId" type="number" name="empid" required></br></br></span>
 			<span><textarea rows="5" cols="20" placeholder="Identification"></textarea><br><br></span>
-			<span> <input type="submit" value="Submit" onclick="price()"></br></span>
-		</form>
-	</div>
 
+			<span> <input type="submit" value="Submit" onclick="registerVehicle()"></br></span>
+
+		</form>
+
+	</div>
 	<div id="btns"  align="center">
         <div id="curr_type" hidden>
-			<span> Choose Currency Type:<br><br>
-				<select id="currecy_type" onchange="change_currency()">
-					<option value="INR" selected>INR</option>
-					<option value="USD">USD</option>
-					<option value="YEN">YEN</option>
-				</select>
+					<span> Choose Currency Type:<br><br>
+						<select id="currecy_type" onchange="changeCurrency()">
+							<option value="INR" selected>INR</option>
+							<option value="USD">USD</option>
+							<option value="YEN">YEN</option>
+						</select>
 			
 		</div>
        
+
 		<div id="cycle" hidden>
 			<p>Choose your plan</p>
 
@@ -85,8 +95,8 @@
 				<input type="radio" id="500" name="cycle" value="500">
 				<label class="p1">500</label>
 			</div>
-		</div>
 
+		</div>
 		<div id="bike" hidden>
 			<p>Choose your plan</p>
 			<div class="p">
@@ -103,11 +113,11 @@
 				<input type="radio" id="1000" name="bike" value="1000">
 				<label class="p1">1000</label>
 			</div>
-		</div>
 
+		</div>
 		<div id="car" hidden>
 			<p>Choose your plan</p>
-			<div class="p" align="left">
+			<div class="p">
 				<input type="radio" id="20" name="car" value="20" checked>
 				<label class="p1">20</label>
 			</div>
@@ -121,11 +131,12 @@
 				<input type="radio" id="3500" name="car" value="3500">
 				<label class="p1">3500</label>
 			</div>
+
 		</div>
 	</div>
-
 	<div id="bill" align="center" hidden>
-		<button type="submit" value="submit" onclick="bill_cal()">Get your pass</button>
+		<br><br>
+		<button type="submit" value="submit" onclick="calculateBill()">Get your pass</button>
 	</div>
 
 	<h3 id="show_price" align="center"></h3>
