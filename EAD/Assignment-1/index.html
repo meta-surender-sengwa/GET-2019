@@ -68,13 +68,13 @@
 	</div>
 	<div id="btns"  align="center">
         <div id="curr_type" hidden>
-					<span> Choose Currency Type:<br><br>
-						<select id="currecy_type" onchange="changeCurrency()">
-							<option value="INR" selected>INR</option>
-							<option value="USD">USD</option>
-							<option value="YEN">YEN</option>
-						</select>
-			
+			<span> Choose Currency Type:<br><br>
+				<select id="currecy_type" onchange=changeCurrency()>
+					<option value="INR" selected>INR</option>
+					<option value="USD" >USD</option>
+					<option value="YEN" >YEN</option>
+				</select>
+			</span>
 		</div>
        
 
@@ -82,54 +82,54 @@
 			<p>Choose your plan</p>
 
 			<div class="p" > 
-				<input type="radio" id="5" name="cycle" value="5" checked>
-				<label class="p1">5</label>
+				<input type="radio" name="cycle" value="5" checked>
+				<label class="p1" id="dailyCycle">5</label>
 			</div>
 
 			<div class="p">
-				<input type="radio" id="100" name="cycle" value="100">
-				<label class="p1">100</label>
+				<input type="radio" name="cycle" value="100">
+				<label class="p1" id="monthlyCycle">100</label>
 			</div>
 
 			<div class="p">
-				<input type="radio" id="500" name="cycle" value="500">
-				<label class="p1">500</label>
+				<input type="radio" name="cycle" value="500">
+				<label class="p1" id="yearlyCycle">500</label>
 			</div>
 
 		</div>
 		<div id="bike" hidden>
 			<p>Choose your plan</p>
 			<div class="p">
-				<input type="radio" id="10" name="bike" value="10" checked>
-				<label class="p1">10</label>
+				<input type="radio" name="bike" value="10" checked>
+				<label class="p1" id="dailyBike">10</label>
 			</div>
 
 			<div class="p">
-				<input type="radio" id="200" name="bike" value="200">
-				<label class="p1">200</label>
+				<input type="radio" name="bike" value="200">
+				<label class="p1" id="monthlyBike">200</label>
 			</div>
 
 			<div class="p"> 
-				<input type="radio" id="1000" name="bike" value="1000">
-				<label class="p1">1000</label>
+				<input type="radio" name="bike" value="1000">
+				<label class="p1" id="yearlyBike">1000</label>
 			</div>
 
 		</div>
 		<div id="car" hidden>
 			<p>Choose your plan</p>
 			<div class="p">
-				<input type="radio" id="20" name="car" value="20" checked>
-				<label class="p1">20</label>
+				<input type="radio" name="car" value="20" checked>
+				<label class="p1" id="dailyCar">20</label>
 			</div>
 
 			<div class="p">
-				<input type="radio" id="500" name="car" value="500">
-				<label class="p1">500</label>
+				<input type="radio" name="car" value="500">
+				<label class="p1"  id="monthlyCar">500</label>
 			</div>
 
 			<div class="p">
-				<input type="radio" id="3500" name="car" value="3500">
-				<label class="p1">3500</label>
+				<input type="radio" name="car" value="3500">
+				<label class="p1" id="yearlyCar">3500</label>
 			</div>
 
 		</div>
