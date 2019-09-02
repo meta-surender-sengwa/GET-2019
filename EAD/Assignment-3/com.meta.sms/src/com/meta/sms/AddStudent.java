@@ -22,7 +22,7 @@ public class AddStudent extends HttpServlet{
 		String lastName = request.getParameter("lastName");
 		String fatherName = request.getParameter("fatherName");
 		String email = request.getParameter("email");
-		String studentClass = request.getParameter("class");
+		String studentClass = request.getParameter("studentClass");
 		String age = request.getParameter("age");
         
         try {

@@ -7,30 +7,20 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class searchStudent
- */
 @WebServlet("/ShowAllStudent")
 public class ShowStudent extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * @see HttpServlet#HttpServlet()
-	 */
 	public ShowStudent() {
 		super();
 	}
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
@@ -40,7 +30,6 @@ public class ShowStudent extends HttpServlet {
 		
 		try {
 			PreparedStatement pst = con.prepareStatement("select * from student");
-			
 			
 			out.print("<table width=80% cellpadding=10 align='center'>");
 			
@@ -55,7 +44,7 @@ public class ShowStudent extends HttpServlet {
 			}
 			
 			out.print("</tr>");
-
+			
 			while (rs.next()) {
 				out.print("<tr>"
 						+ "<td>" + rs.getString(1) + "</td>"
@@ -64,9 +53,22 @@ public class ShowStudent extends HttpServlet {
 						+ "<td>" + rs.getString(4) + "</td>"
 						+ "<td>" + rs.getString(5) + "</td>"
 						+ "<td>" + rs.getString(6) + "</td>"
+						+ "<td><a href='UpdateStudent.html'>Update</a></td>"
 						+ "</tr>");
+				out.println("<script>");
+				out.println("function passValue() {");
+				out.println("document.cookie = '+rs.getString(1)+ ',' + rs.getString(2) +'; path=/UpdateStudent.html';");
+				out.println("newSummary();	");
+				out.println("}");
+				out.println("function newSummary() {");
+				out.println("	window.open('UpdateStudent.html', '_blank');");
+				out.println("}");
+				out.println("</script>");
 			}
+			
 			out.print("</table>");
+			out.print("<br><br>");
+			out.println("<div align='center'><a href='index.html'>Go Back</a></div>");
 		}
 
 		catch (SQLException e) {
@@ -76,7 +78,5 @@ public class ShowStudent extends HttpServlet {
 		finally {
 			out.close();
 		}
-
 	}
-
 }
