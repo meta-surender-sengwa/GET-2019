@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>SMS - Search Student</title>
+</head>
+<body>
+	<div align="center">
+		<h1>Student Management System</h1><br>
+	</div> 
+	
+	<div align="center">
+		<form action="SearchStudentByName" method="GET" name="searchStudentForm">
+			<table align="center" cellpadding="10">
+				<tr><h3>Search Student By Name</h3></tr>
+				<tr><td><input type="text" id="searchFirstName" name="firstName" placeholder="Enter First Name" pattern="[A-Za-z]*" required></td></tr>
+				<tr><td><input type="text" id="searchLastName" name="lastName" placeholder="Enter Last Name" pattern="[A-Za-z]*" required></td></tr>
+				<tr><td align="center"><input type="submit" value="Search"></td></tr>
+			</table>
+		</form>
+		<br><br>
+		<form action="SearchStudentByClass" method = "get">
+			<table align="center" cellpadding="10">
+				<tr><h3>Search student by Class</h3></tr>
+        		<tr><td><input name='class' placeHolder='class' type='number' min = "1" max = "12" ></td></tr>
+				<tr><td><input name='search' value='search' type = 'submit'></td></tr>
+			</table>
+		</form>
+	</div>
+
+</body>
+</html>

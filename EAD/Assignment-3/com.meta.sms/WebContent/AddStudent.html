@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>SMS - Add Student</title>
+</head>
+<body>
+	<div align="center">
+		<h1>Student Management System</h1><br>
+	</div> 
+	
+	<div align="center">
+		<form name="addStudentForm" action="AddStudent" method="POST">
+			<h3>Add Student Details</h3>
+			<table cellpadding="10" align="center">
+				<tr><td><input type="text" name="firstName" size="30" placeholder="Enter First Name" pattern="[A-Za-z]*" required></td></tr>
+				<tr><td><input type="text" name="lastName" size="30" placeholder="Enter Last Name" pattern="[A-Za-z]*" required></td></tr>
+				<tr><td><input type="text" name="fatherName" size="30" placeholder="Enter Fathers Name" pattern="^[A-Za-z ]+ [A-Za-z ]*$" required></td></tr>
+				<tr><td><input type="text" name="email" size="30" placeholder="Enter Email Address" required></td></tr>
+				<tr><td><input type="number" name="studentClass" size="30" placeholder="Enter Standard" min="1" max="12"  required></td></tr>
+				<tr><td><input type="number" name="age" size="30" placeholder="Enter Students Age" min="4" max="25" required></td></tr>
+				<tr><td align="center"><input type="submit" value="Submit">
+				</tr>
+			</table>
+		</form>
+	</div>
+</body>
+</html>
