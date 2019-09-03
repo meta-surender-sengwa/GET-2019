@@ -3,59 +3,6 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>SMS - Add Student</title>
-<script>
-	function inputValidation() {
-
-		var firstName = addStudentForm.firstName;
-		var lastName = addStudentForm.lastName;
-		var fatherName = addStudentForm.fatherName;
-		var email = addStudentForm.email;
-		var studentClass = addStudentForm.studentClass;
-		var age = addStudentForm.age;
-
-		var nameRegEx = /^[a-zA-Z]+$/i;
-		var fatherNameRegEx = /^[a-zA-Z]+[\s]{1}[a-zA-Z]+$/i;
-		var emailRegEx = /^[a-zA-Z0-9]+[@]{1}[a-zA-Z]+[\.]{1}[a-zA-Z]+$/i;
-		var numericRegEx = /^[0-9]{1,2}$/i;
-
-		if (!nameRegEx.test(firstName.value)) {
-			window.alert("Please enter first name");
-			firstName.focus();
-			return false;
-		}
-
-		if (!nameRegEx.test(lastName.value)) {
-			window.alert("Please enter last name");
-			lastName.focus();
-			return false;
-		}
-
-		if (!fatherNameRegEx.test(fatherName.value)) {
-			window.alert("Please enter fathers name");
-			fatherName.focus();
-			return false;
-		}
-
-		if (!emailRegEx.test(email.value)) {
-			window.alert("Please enter your valid email");
-			email.focus();
-			return false;
-		}
-
-		if (!numericRegEx.test(studentClass.value)) {
-			window.alert("Please enter Class");
-			studentClass.focus();
-			return false;
-		}
-
-		if (!numericRegEx.test(age.value)) {
-			window.alert("Please enter age");
-			age.focus();
-			return false;
-		}	
-		return true;
-	}
-</script>
 </head>
 <body>
 	<div align="center">
@@ -66,13 +13,13 @@
 		<form name="addStudentForm" action="AddStudent" method="POST">
 			<h3>Add Student Details</h3>
 			<table cellpadding="10" align="center">
-				<tr><td><input type="text" name="firstName" size="30" placeholder="Enter First Name" required></td></tr>
-				<tr><td><input type="text" name="lastName" size="30" placeholder="Enter Last Name" required></td></tr>
-				<tr><td><input type="text" name="fatherName" size="30" placeholder="Enter Fathers Name" required></td></tr>
+				<tr><td><input type="text" name="firstName" size="30" placeholder="Enter First Name" pattern="[A-Za-z]*" required></td></tr>
+				<tr><td><input type="text" name="lastName" size="30" placeholder="Enter Last Name" pattern="[A-Za-z]*" required></td></tr>
+				<tr><td><input type="text" name="fatherName" size="30" placeholder="Enter Fathers Name" pattern="^[A-Za-z ]+ [A-Za-z ]*$" required></td></tr>
 				<tr><td><input type="text" name="email" size="30" placeholder="Enter Email Address" required></td></tr>
-				<tr><td><input type="text" name="studentClass" size="30" placeholder="Enter Standard" required></td></tr>
-				<tr><td><input type="text" name="age" size="30" placeholder="Enter Students Age" required></td></tr>
-				<tr><td align="center"><input type="submit" value="Submit" onclick=inputValidation()>
+				<tr><td><input type="number" name="studentClass" size="30" placeholder="Enter Standard" min="1" max="12"  required></td></tr>
+				<tr><td><input type="number" name="age" size="30" placeholder="Enter Students Age" min="4" max="25" required></td></tr>
+				<tr><td align="center"><input type="submit" value="Submit">
 				</tr>
 			</table>
 		</form>

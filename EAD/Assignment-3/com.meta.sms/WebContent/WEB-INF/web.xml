@@ -13,24 +13,26 @@
   </servlet-mapping>
   
   <servlet>
-  	<servlet-name>SearchStudent</servlet-name>
-    <servlet-class>com.meta.sms.SearchStudent</servlet-class>
+  	<servlet-name>SearchStudentByClass</servlet-name>
+    <servlet-class>com.meta.sms.SearchStudentByClass</servlet-class>
   </servlet>
   
   <servlet-mapping>
-  	<servlet-name>SearchStudent</servlet-name>
-  	<url-pattern>/SearchStudent</url-pattern>
+  	<servlet-name>SearchStudentByClass</servlet-name>
+  	<url-pattern>/SearchStudentByClass</url-pattern>
   </servlet-mapping>
   
   <servlet>
-  	<servlet-name>UpdateStudent</servlet-name>
-    <servlet-class>com.meta.sms.UpdateStudent</servlet-class>
+  	<servlet-name>SearchStudentByName</servlet-name>
+    <servlet-class>com.meta.sms.SearchStudentByName</servlet-class>
   </servlet>
   
   <servlet-mapping>
-  	<servlet-name>UpdateStudent</servlet-name>
-  	<url-pattern>/UpdateStudent</url-pattern>
+  	<servlet-name>SearchStudentByName</servlet-name>
+  	<url-pattern>/SearchStudentByName</url-pattern>
   </servlet-mapping>
+  
+  
   
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>

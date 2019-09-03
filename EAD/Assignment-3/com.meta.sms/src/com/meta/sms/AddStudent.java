@@ -16,7 +16,7 @@ public class AddStudent extends HttpServlet{
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 		
-		Connection con=DataBaseConnection.getConnection();
+		Connection con = DataBaseConnection.getConnection();
 		
 		String firstName = request.getParameter("firstName");
 		String lastName = request.getParameter("lastName");
@@ -36,21 +36,21 @@ public class AddStudent extends HttpServlet{
             ps.setString(5, studentClass);
             ps.setString(6, age);
             
-            int i = ps.executeUpdate();
+            int rowsEffected = ps.executeUpdate();
             
-            if(i > 0) {
+            if(rowsEffected > 0) {
             	out.println("<div align='center'>");
                 out.println("Student Registeration successful");
                 out.println("<br/>");
                 out.println("<a href='index.html'>Go Back</a>");
                 out.println("</div>");
+                
             } else {
             	out.println("Student Registeration failed");
             }
+            
         } catch(Exception ex) {
         	ex.printStackTrace();
         }
 	}
 }
-
-

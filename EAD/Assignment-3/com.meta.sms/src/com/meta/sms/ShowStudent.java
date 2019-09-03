@@ -47,23 +47,17 @@ public class ShowStudent extends HttpServlet {
 			
 			while (rs.next()) {
 				out.print("<tr>"
-						+ "<td>" + rs.getString(1) + "</td>"
+						+ "<td>" + rs.getInt(1) + "</td>"
 						+ "<td>" + rs.getString(2) + "</td>"
 						+ "<td>" + rs.getString(3) + "</td>"
 						+ "<td>" + rs.getString(4) + "</td>"
 						+ "<td>" + rs.getString(5) + "</td>"
-						+ "<td>" + rs.getString(6) + "</td>"
+						+ "<td>" + rs.getInt(6) + "</td>"
+						+ "<td>" + rs.getInt(7) + "</td>"
 						+ "<td><a href='UpdateStudent.html'>Update</a></td>"
-						+ "</tr>");
-				out.println("<script>");
-				out.println("function passValue() {");
-				out.println("document.cookie = '+rs.getString(1)+ ',' + rs.getString(2) +'; path=/UpdateStudent.html';");
-				out.println("newSummary();	");
-				out.println("}");
-				out.println("function newSummary() {");
-				out.println("	window.open('UpdateStudent.html', '_blank');");
-				out.println("}");
-				out.println("</script>");
+						+ "</tr>"
+						+"<td>"+ "<form action=\"StudentDetails\" method=\"GET\"><input type=\"hidden\" name=\"id\" value=\"" + rs.getInt(1) + "\"> <input type=\"submit\" value=\"Update\"></form>" + "</td> "
+						+"</tr>");
 			}
 			
 			out.print("</table>");

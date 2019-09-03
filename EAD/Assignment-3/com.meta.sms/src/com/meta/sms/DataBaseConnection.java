@@ -23,7 +23,6 @@ public class DataBaseConnection {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-
 	}
 
 	public static Connection getConnection() {

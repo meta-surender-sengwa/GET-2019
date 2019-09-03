@@ -5,13 +5,14 @@ import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class SearchStudent extends HttpServlet {
+public class SearchStudentByName extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
 
@@ -28,26 +29,39 @@ public class SearchStudent extends HttpServlet {
 		
 		try {
 			PreparedStatement pst = con.prepareStatement
-					("SELECT father_name, email, class, age from student where first_name = ? AND last_name = ? GROUP BY class");
+					("SELECT * student where first_name = ? AND last_name = ? GROUP BY class");
+			
 			pst.setString(1, firstName);
 			pst.setString(2, lastName);
 
-			ResultSet rs = pst.executeQuery();
+			out.print("<table width=50% border=1>");
+			out.print("<caption>Result:</caption>");
 
-			out.print("<table width=80% cellpadding=10 align='center'>");
+			ResultSet rs = pst.executeQuery();
+			ResultSetMetaData rsmd = rs.getMetaData();
+			int columnCount = rsmd.getColumnCount();
+			
+			out.print("<tr>");
+			
+			for (int index = 1; index <= columnCount; index++) {
+				out.print("<th>" + rsmd.getColumnName(index) + "</th>");
+			}
+
+			out.print("</tr>");
 
 			while (rs.next()) {
 				out.print("<tr>"
-						+ "<td>" + firstName + "</td>"
-						+ "<td>" + lastName + "</td>"
-						+ "<td>" + rs.getString(1) + "</td>"
+						+ "<td>" + rs.getInt(1) + "</td>"
 						+ "<td>" + rs.getString(2) + "</td>"
 						+ "<td>" + rs.getString(3) + "</td>"
 						+ "<td>" + rs.getString(4) + "</td>"
+						+ "<td>" + rs.getString(5) + "</td>"
+						+ "<td>" + rs.getInt(6) + "</td>"
+						+ "<td>" + rs.getInt(7) + "</td>"
 						+ "</tr>");
 			}
+
 			out.print("</table>");
-			out.print("<br><br>");
 			out.println("<div align='center'><a href='index.html'>Go Back</a></div>");
 	         
 		} catch(Exception ex) {
@@ -55,8 +69,6 @@ public class SearchStudent extends HttpServlet {
 			
 		} finally {
 			out.close();
-		}
-			
+		}		
 	}
-
 }
