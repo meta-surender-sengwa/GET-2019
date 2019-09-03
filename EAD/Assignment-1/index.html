@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Metacube parking system</title>
+	<style>
+		span {
+			width: 50%;
+			padding: 10px 5px;
+		}
+	</style>
+	<script src="parking.js">
+		
+	</script>
+
+</head>
+
+<body>
+	<div align="center">
+		<div>
+			<h1>Metacube Parking system</h1>
+		</div>
+		<div id="application">
+			<h2>Employee Registration form</h2>
+			<form action="" method="POST" name="RegForm" onsubmit="return false" >
+				<span><input placeholder="Name" type="text" name="Name" required></br></br></span>
+				<div>
+					<input type="radio" id="male" name="gender" value="male" checked>
+					<label for="male" id="male">Male</label>
+					<input type="radio" id="female" name="gender" value="female">
+					<label for="female">Female</label>
+				</div><br>
+
+				<span> <input placeholder="Email" name="Email" type="email" required></br></br></span>
+				<span> <input placeholder="Contact Number" name="Contact" type="text" maxlength="10" size="20" required
+						size="10"></br></br></span>
+				<span> <input type="password" placeholder="Password" name="Password"  pattern=".{8,}" required></br></br></span>
+				<span> <input type="password" placeholder="Confirm Password" name="Conpassword"
+						required></br></br></span>
+				<span> <input type="submit" value="Submit" onclick="registerUser()"></br></br></span>
+
+			</form>
+
+		</div>
+	</div>
+
+	<div id="vehicle" align="center" style="display:none;">
+		<h2>
+			Vehicle registration form
+		</h2>
+		<form action="" method="POST" name="vehicleform" onsubmit="return false">
+			<span> <input placeholder="Vehicle Name" name="vname" type="text" required></br><br></span>
+			<span> Choose Vehicle Type:<br><br>
+				<select id="vehicle_type">
+					<option value="cycle">Cycle</option>
+					<option value="bike">Bike</option>
+					<option value="car">Car</option>
+
+				</select>
+			</span></br></br>
+			<span> <input placeholder="Vehicle Number" name="number" type="text" required></br></br></span>
+			<span><textarea rows="5" cols="20" placeholder="Identification"></textarea><br><br></span>
+
+			<span> <input type="submit" value="Submit" onclick="registerVehicle()"></br></span>
+
+		</form>
+
+	</div>
+	<div id="btns"  align="center">
+        <div id="curr_type" hidden>
+			<span> Choose Currency Type:<br><br>
+				<select id="currecy_type" onchange=changeCurrency()>
+					<option value="INR" selected>INR</option>
+					<option value="USD" >USD</option>
+					<option value="YEN" >YEN</option>
+				</select>
+			</span>
+		</div>
+       
+
+		<div id="cycle" hidden>
+			<p>Choose your plan</p>
+
+			<div class="p" > 
+				<input type="radio" name="cycle" value="5" checked>
+				<label class="p1" id="dailyCycle">5</label>
+			</div>
+
+			<div class="p">
+				<input type="radio" name="cycle" value="100">
+				<label class="p1" id="monthlyCycle">100</label>
+			</div>
+
+			<div class="p">
+				<input type="radio" name="cycle" value="500">
+				<label class="p1" id="yearlyCycle">500</label>
+			</div>
+
+		</div>
+		<div id="bike" hidden>
+			<p>Choose your plan</p>
+			<div class="p">
+				<input type="radio" name="bike" value="10" checked>
+				<label class="p1" id="dailyBike">10</label>
+			</div>
+
+			<div class="p">
+				<input type="radio" name="bike" value="200">
+				<label class="p1" id="monthlyBike">200</label>
+			</div>
+
+			<div class="p"> 
+				<input type="radio" name="bike" value="1000">
+				<label class="p1" id="yearlyBike">1000</label>
+			</div>
+
+		</div>
+		<div id="car" hidden>
+			<p>Choose your plan</p>
+			<div class="p">
+				<input type="radio" name="car" value="20" checked>
+				<label class="p1" id="dailyCar">20</label>
+			</div>
+
+			<div class="p">
+				<input type="radio" name="car" value="500">
+				<label class="p1"  id="monthlyCar">500</label>
+			</div>
+
+			<div class="p">
+				<input type="radio" name="car" value="3500">
+				<label class="p1" id="yearlyCar">3500</label>
+			</div>
+
+		</div>
+	</div>
+	<div id="bill" align="center" hidden>
+		<br><br>
+		<button type="submit" value="submit" onclick="calculateBill()">Get your pass</button>
+	</div>
+
+	<h3 id="show_price" align="center"></h3>
+</body>
+
+</html>
