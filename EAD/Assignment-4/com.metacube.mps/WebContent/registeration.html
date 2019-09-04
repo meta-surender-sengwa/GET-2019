@@ -3,73 +3,20 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Employee Registeration</title>
-<script>
-	function inputValidation() {
-
-		var firstName = addStudentForm.firstName;
-		var lastName = addStudentForm.lastName;
-		var fatherName = addStudentForm.fatherName;
-		var email = addStudentForm.email;
-		var studentClass = addStudentForm.studentClass;
-		var age = addStudentForm.age;
-
-		var nameRegEx = /^[a-zA-Z]+$/i;
-		var fatherNameRegEx = /^[a-zA-Z]+[\s]{1}[a-zA-Z]+$/i;
-		var emailRegEx = /^[a-zA-Z0-9]+[@]{1}[a-zA-Z]+[\.]{1}[a-zA-Z]+$/i;
-		var numericRegEx = /^[0-9]{1,2}$/i;
-
-		if (!nameRegEx.test(firstName.value)) {
-			window.alert("Please enter first name");
-			firstName.focus();
-			return false;
-		}
-
-		if (!nameRegEx.test(lastName.value)) {
-			window.alert("Please enter last name");
-			lastName.focus();
-			return false;
-		}
-
-		if (!fatherNameRegEx.test(fatherName.value)) {
-			window.alert("Please enter fathers name");
-			fatherName.focus();
-			return false;
-		}
-
-		if (!emailRegEx.test(email.value)) {
-			window.alert("Please enter your valid email");
-			email.focus();
-			return false;
-		}
-
-		if (!numericRegEx.test(studentClass.value)) {
-			window.alert("Please enter Class");
-			studentClass.focus();
-			return false;
-		}
-
-		if (!numericRegEx.test(age.value)) {
-			window.alert("Please enter age");
-			age.focus();
-			return false;
-		}	
-		return true;
-	}
-</script>
 </head>
 <body>
 	<div align="center">
-		<h1>MetaCube Parking System</h1><br>
+		<h1>Parking Parking System</h1><br>
 	</div> 
 	
 	<div align="center">
-		<form name="registerEmployeeForm" action="RegisterEmployee" method="POST">
+		<form name="registerEmployeeForm" action="EmployeeRegisteration" method="POST">
 			<h3>Add Employee Details</h3>
 			<table cellpadding="10" align="center">
 				<tr><td><input type="text" name="name" size="30" placeholder="Enter Full Name" required></td></tr>
 				<tr><td><div align="center"> Gender :
-					<select id="departement">
-						<option value="default">Select</option>
+					<select name="gender">
+						<option value="default" selected disabled>Select</option>
 						<option value="male">Male</option>
 						<option value="female">Female</option>
 					</select></div>
@@ -79,7 +26,7 @@
 				<tr><td><input type="password" name="conPassword" size="30" placeholder="confirm your password" required></td></tr>
 				<tr><td><input type="text" name="contact" size="30" placeholder="Enter your contact no" required></td></tr>
 				<tr><td><div align="center"> Choose department type :
-					<select id="departement">
+					<select name="departement">
 						<option value="default">Select</option>
 						<option value="dep1">Dep1</option>
 						<option value="dep2">Dep2</option>

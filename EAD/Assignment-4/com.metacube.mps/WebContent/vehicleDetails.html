@@ -4,56 +4,32 @@
 <meta charset="ISO-8859-1">
 <title>Employee Registration</title>
 
-<script>
-	function validateVehicleDetails {
-		var name = document.forms.vehicle.vehicleName;
-	    var number = document.forms.vehicle.vehicleNumber;
-
-	    var nameRegEx = /^[a-zA-Z0-9\s]+$/i;
-	    var numberRegEx = /^[a-zA-Z]{2}[0-9]{2}[a-zA-Z]{2}[0-9]{4}$/;
-
-	    if (!nameRegEx.test(name.value)) {
-	        window.alert("Please enter proper vehicle name");
-	        vehicleName.focus();
-	        return false;
-	    }
-
-	    if (!numberRegEx.test(number.value)) {
-	        window.alert("Please enter proper vehicle number");
-	        vehcileNumber.focus();
-	        return false;
-	    }
-	    return true;
+<script>	
+function registerVehicle() {
+	document.getElementById("plan").style.display= "block";
+   	
+   	var vehicleType = document.getElementById("vehicle_type").value;
+   	
+   	var priceInINR = {
+   			cycle:[5,100,500],
+   			bike:[10,250,1000],
+   			car:[20,1000,3500]
+   	}
+       
+	for(var index=0; index<3; index++) {
+		document.getElementById("vehicleType").innerHTML = priceInINR[vehicleType][index];
 	}
+
+	document.getElementById("bill").style.display = "block";
+}
+
+function changePrice() {
+	var currencyType = document.getElementById("vehicle_type").value;
 	
-	function registerVehicle() {
-		window.alert("ehllo");
-		var flag = validateVehicleDetails();
-	    if(flag) {
-	    	
-	    	document.getElementById("plan").style.display= "block";
-	    	
-	    	var vehicleType = document.getElementById("vehicle_type").value;
-	        
-			if (type == "cycle") {
-				document.getElementById("daily").innerHTML = "5";
-	            document.getElementById("monthly").innerHTML = "100";
-	            document.getElementById("yearly").innerHTML = "500";
-
-	        } else if (type == "bike") {
-	        	document.getElementById("daily").innerHTML = "10";
-	            document.getElementById("monthly").innerHTML = "250";
-	            document.getElementById("yearly").innerHTML = "1000";
-
-	        } else if (type == "bike") {
-	        	document.getElementById("daily").innerHTML = "10";
-	            document.getElementById("monthly").innerHTML = "250";
-	            document.getElementById("yearly").innerHTML = "1000";
-
-	        } 
-	        document.getElementById("bill").style.display = "block";
-	    }
-	}
+	var currency = { "ÏNR", "USD", "YEN" }
+	
+	
+}
 </script>
 
 </head>
@@ -67,16 +43,16 @@
 		<h3>Vehicle registration form</h3>
 		
 		<form action="" method="POST" name="vehicleRegisterationform" onsubmit="return false">
-			<input placeholder="Vehicle Name" name="vehicleName" type="text" size="30" required><br><br>
+			<input placeholder="Vehicle Name" name="vehicleName" type="text" size="30" pattern="[a-zA-Z0-9\s]+" required><br><br>
 			<div align="center">Vehicle Type:
-				<select id="vehicle_type">
-					<option value="default" selected disabled>Select</option>
-					<option value="cycle" onchange="registerVehicle()">Cycle</option>
-					<option value="bike" onchange="registerVehicle()">Bike</option>
-					<option value="car" onchange="registerVehicle()">Car</option>
+				<select id="vehicle_type" onchange="registerVehicle()">
+					<option value="default">Select</option>
+					<option value="cycle">Cycle</option>
+					<option value="bike">Bike</option>
+					<option value="car"">Car</option>
 				</select>
 			</div><br>
-			<input placeholder="Vehicle Number" name="vehicleNumber" type="text" size="30" required><br><br>
+			<input placeholder="Vehicle Number" name="vehicleNumber" type="text" size="30" pattern="[a-zA-Z0-9\s]+" required><br><br>
 			<input placeholder="Employee Id" name="employeeId" type="text" size="30" required><br><br>
 			<textarea rows="5" cols="31" placeholder="Description"></textarea><br><br>
 
@@ -85,20 +61,26 @@
 	</div>
 	
 	<div id="plan" align="center" style="display: none;">
-		<p>Choose your plan</p>
+		<p><br>Choose currency</p>
+		<select id="currency_type" onchange="changePrice()">
+			<option value="INR">INR</option>
+			<option value="USD">USD</option>
+			<option value="YEN">YEN</option>
+		</select>
+		<p><br>Choose your plan</p>
 		<div class="p" > 
 			<input type="radio" name="daily" value="" checked>
-			<label class="p1" id="daily"></label>
+			<label id="daily"></label>
 		</div>
 
 		<div class="p">
 			<input type="radio" name="monthly" value="">
-			<label class="p1" id="monthly"></label>
+			<label id="monthly"></label>
 		</div>
 
 		<div class="p">
 			<input type="radio" name="yearly" value="">
-			<label class="p1" id="yearly"></label>
+			<label  id="yearly"></label>
 		</div>
 	</div>
 	

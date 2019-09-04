@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+      if (session != null) {
+    	  
+         if (session.getAttribute("email") != null) {
+            String user = (String) session.getAttribute("email");
+            out.print("Hello, " + user + ".  Welcome to ur Profile !");
+            
+         } else {
+            response.sendRedirect("login.html");
+         }
+      }
+	</script>
+   	<br>
+   	<br>
+   	<div align="right">
+   		<form action="EmployeeLogout" method="post">
+      		<input type="submit" value="Logout">
+   		</form>
+   	</div>
+   	
+   	<div align="CENTER">
+   		<form name="" action="vehicleDetails.html" method="POST">
+   			<br><br>
+			<align="center"><input type="submit" value="ADD VEHICLE">
+		</form>
+   	</div>
+   	
+</body>
+</html>
