@@ -44,7 +44,7 @@ public class EmployeeRegisteration extends HttpServlet{
             
             if(rowsEffected > 0) {
             	 RequestDispatcher rd = request.getRequestDispatcher("login.html");
-                 out.println("Employee registeration successful. Now login to get into your account");
+                 out.println("<div align='center'>Employee registeration successful. Now login to get into your account</div>");
                  rd.include(request, response);
                 
             } else {

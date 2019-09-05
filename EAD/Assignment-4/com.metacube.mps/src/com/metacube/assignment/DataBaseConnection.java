@@ -4,28 +4,32 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+ 
 public class DataBaseConnection {
-
+	
 	static Connection con;
+	
 	static {
-		String host = "jdbc:mysql://localhost:3306/";
-		String dbName = "mps";
-		String mySqlURL = host + dbName;
-		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-		} catch (ClassNotFoundException cnfe) {
-			System.out.println("Error loding driver :" + cnfe);
+			
+		} catch (ClassNotFoundException cnf) {
+			System.out.println("Driver could not be loaded: " + cnf);
 		}
+	
+		String connectionUrl = "jdbc:mysql://localhost:3306/mps";
+		String user = "root";
+		String password = "root";
 		
 		try {
-			con = DriverManager.getConnection(mySqlURL, "root", "root");
-		} catch (SQLException e) {
-			e.printStackTrace();
+			con = DriverManager.getConnection(connectionUrl, user, password);
+			
+		} catch (SQLException sqle) {
+			System.out.println("Error connecting to the database");
+			System.out.println("SQL Exception thrown: " + sqle);
 		}
-
 	}
-
+	
 	public static Connection getConnection() {
 		return con;
 	}

@@ -21,33 +21,31 @@ public class VehicleRegisteration extends HttpServlet{
 		
 		Connection con = DataBaseConnection.getConnection();
 		
-		String name = request.getParameter("name");
-		String gender = request.getParameter("gender");
-		String email = request.getParameter("email");
-		String password = request.getParameter("password");
-		String contact = request.getParameter("contact");
-		String department = request.getParameter("department");
+		String vehicleNname = request.getParameter("vehicleName");
+		String vehicleType= request.getParameter("vehicle_type");
+		String vehicleNumber= request.getParameter("vehicleNumber");
+		int employeeId = Integer.parseInt(request.getParameter("employeeId"));
+		String vehicleIdentifiaction = request.getParameter("vehicle_identification");
 		
         try {
             PreparedStatement ps = con.prepareStatement
-            		("insert into employee(emp_name, emp_gender, emp_email, emp_password,"
-                    + "emp_contact, emp_department) values(?,?,?,?,?,?)");
+            	("insert into vehicle(vehicle_name, vehicle_type, vehicle_number, employee_id, vehicle_identification) values(?,?,?,?,?)");
 
-            ps.setString(1, name);
-            ps.setString(2, gender);
-            ps.setString(3, email);
-            ps.setString(4, password);
-            ps.setString(5, contact);
-            ps.setString(6, department);
+            ps.setString(1, vehicleNname);
+            ps.setString(2, vehicleType);
+            ps.setString(3, vehicleNumber);
+            ps.setInt(4, employeeId);
+            ps.setString(5, vehicleIdentifiaction);
             
             int rowsEffected = ps.executeUpdate();
             
             if(rowsEffected > 0) {
             	 RequestDispatcher rd = request.getRequestDispatcher("login.html");
-                 out.println("Employee registeration successful. Now login to get into your account");
+                 out.println("<div align='center'>Your vehicle successfully addded. <br> Now login to continue....</div>");
                  rd.include(request, response);
                 
             } else {
+            	
             }
             
         } catch(Exception ex) {

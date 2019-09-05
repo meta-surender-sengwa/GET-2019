@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Employee Home</title>
 </head>
 <body>
 	<script>
@@ -17,18 +17,27 @@
          }
       }
 	</script>
-   	<br>
-   	<br>
+	
+	<div align="center">
+		<h1>Parking System</h1><br>
+	</div>
+	
    	<div align="right">
    		<form action="EmployeeLogout" method="post">
       		<input type="submit" value="Logout">
    		</form>
    	</div>
-   	
-   	<div align="CENTER">
-   		<form name="" action="vehicleDetails.html" method="POST">
-   			<br><br>
-			<align="center"><input type="submit" value="ADD VEHICLE">
+   
+  	<div align="CENTER">
+  		<form name="" action="ShowEmployeeDetails" method="GET">
+  			<br><br><br><input type="text" name="employee_registeration_id" id="employee_registeration_id" value="1">
+  			<br><br><align="center"><input type="submit" value="Show Details">
+		</form>
+		
+		<form name="" action="ShowFriends" method="GET">
+			<br><br><br><br><input type="text" name="employee_registeration_id" id="employee_registeration_id" value="1">
+			<br><br><input type="text" name="employee_department" id="employee_department" value="Dep1">
+  			<br><br><align="center"><input type="submit" value="Show Friends">
 		</form>
    	</div>
    	
