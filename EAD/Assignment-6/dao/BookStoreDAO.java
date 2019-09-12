@@ -145,14 +145,10 @@ public class BookStoreDAO {
 			callStmt.setString(2, book.getWriter());
 			callStmt.setString(3, book.getPublisher());
 			callStmt.setInt(4, book.getPublishedYear());
+			
 			int result = callStmt.executeUpdate();
 			
-			if(result > 0) {
-				return true;
-				
-			} else {
-				return false;
-			}
+			return result > 0 ;
 			
 		} catch(SQLException e) {
 			e.printStackTrace();
@@ -192,12 +188,7 @@ public class BookStoreDAO {
 			callStmt.setInt(1, id);
 			int result = callStmt.executeUpdate();
 			
-			if(result > 0) {
-				return true;
-				
-			} else {
-				return false;
-			}
+			return result > 0;
 			
 		} catch(SQLException e) {
 			e.printStackTrace();
@@ -234,11 +225,7 @@ public class BookStoreDAO {
 			callStmt = conn.prepareCall(DatabaseQueryFactory.DELETE_ALL_BOOK);
 			int result = callStmt.executeUpdate();
 			
-			if(result > 0) {
-				return true;
-			} else {
-				return false;
-			}
+			return result > 0;
 			
 		} catch(SQLException e) {
 			e.printStackTrace();
@@ -278,11 +265,7 @@ public class BookStoreDAO {
 			callStmt.setString(2, updateBook.getPublisher());
 			int result = callStmt.executeUpdate();
 			
-			if(result > 0){
-				return true;
-			} else {
-				return false;
-			}
+			return result > 0;
 			
 		} catch(SQLException e) {
 			e.printStackTrace();
