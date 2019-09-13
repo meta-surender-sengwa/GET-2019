@@ -1,13 +1,13 @@
-package com.metacube.sms;
+package com.metacube.EADSESSION8;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SmsApplication {
+public class Eadsession8Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SmsApplication.class, args);
+		SpringApplication.run(Eadsession8Application.class, args);
 	}
 
 }

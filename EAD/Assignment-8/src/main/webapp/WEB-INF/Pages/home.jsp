@@ -1,16 +1,17 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Home</title>
+	<meta charset="UTF-8">
+	<title>Student Management System - Home</title>
 </head>
 <body >
-<h1 align = "center">${welcomeMessage}</h1>
 
-<a href="/AddStudentDetails"><h1 align = "center">Add Student Details</h1></a>
-<a href="/ShowStudentDetails"><h1 align = "center">Show Student Details</h1></a>
+<div align="center">
+	<br><h1 align = "center">${welcomeMessage}</h1><br>
+	<h2><a href="/AddStudentPage">ADD STUDENT DETAILS</a></h2>
+	<h2><a href="/ShowStudentPage">SHOW STUDENT DETAILS</a></h2>
+</div>
 
 </body>
 </html>

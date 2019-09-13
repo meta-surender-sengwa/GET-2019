@@ -1,4 +1,4 @@
-package com.metacube.sms.model;
+package com.metacube.EADSESSION8.model;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
@@ -7,31 +7,34 @@ import javax.validation.constraints.Pattern;
 public class Student {
 	
 	@NotBlank(message = "{blankFirstName}")
+	@Pattern(regexp = "[a-zA-Z]+", message ="{validFirstName}")
 	private String firstName;
 	
 	@NotBlank(message = "{blankLastName}")
+	@Pattern(regexp = "[a-zA-Z]+", message ="{validLastName}")
 	private String lastName;
 	
 	@NotBlank(message = "{blankFatherName}")
 	private String fatherName;
 	
-	@Email(message = "{validEmail}")
 	@NotBlank(message = "{blankEmail}")
+	@Email(message = "{validEmail}")
 	private String email;
 	
+	@NotBlank(message ="{blankClass}")
 	@Pattern(regexp = "[1-12]+", message = "{validStudentClass}")
-	@NotBlank(message = "{blankClass}")
 	private String studentClass;
 	
-	@Pattern(regexp = "[0-9]+", message = "{validAge}")
 	@NotBlank(message = "{blankAge}")
+	@Pattern(regexp = "[1-99]{1,2}", message = "{validAge}")
 	private String age;
 
-	public Student(){
+	public Student() {
 		
 	}
 		
 	public Student(String firstName, String lastName, String fatherName, String emailId, String studentClass, String age) {
+		
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.fatherName = fatherName;
@@ -88,4 +91,5 @@ public class Student {
 	public void setAge(String age) {
 		this.age = age;
 	}
+
 }
