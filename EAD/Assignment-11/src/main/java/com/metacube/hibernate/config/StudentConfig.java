@@ -38,7 +38,7 @@ public class StudentConfig {
 	public SessionFactory sessionFactory() {
 		LocalSessionFactoryBean lsfb = new LocalSessionFactoryBean();
 		lsfb.setDataSource(getDataSource());
-		lsfb.setPackagesToScan("com.metacube.SpringMVCStudentDetails.Model");
+		lsfb.setPackagesToScan("com.metacube.hibernate.model");
 		lsfb.setHibernateProperties(hibernateProperties());
 		
 		try {
