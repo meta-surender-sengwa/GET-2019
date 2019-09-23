@@ -22,28 +22,24 @@ public class Student {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "Sid")
 	private int id;
-	@NotBlank(message = "{blankFirstName}")
+	
+	@Pattern(regexp = "[a-zA-Z]{3,20}", message = "{validFirstName}")
 	String firstName;
 
-	@NotBlank(message = "{blankLastName}")
+	@Pattern(regexp = "[a-zA-Z]{3,20}", message = "{validLastName}")
 	String lastName;
 	
-
-	@NotBlank(message = "{blankFatherName}")
+	@Pattern(regexp = "[a-zA-Z ]{3,30}", message = "{validFatherName}")
 	String fatherName;
 
-	@Email(message = "{validEmail}")
+	@Email
 	@NotBlank(message = "{blankEmail}")
 	String email;
 
-	
-	@Pattern(regexp = "[1-12]+", message = "{validStudentClass}")
-	@NotBlank(message ="{blankClass}")
+	@Pattern(regexp = "[1-12]{1,2}", message = "{validStudentClass}")
 	String studentClass;
 
-	
-	@Pattern(regexp = "[0-9]+", message = "{validAge}")
-	@NotBlank(message = "{blankAge}")
+	@Pattern(regexp = "[5-25]{1,2}", message = "{validAge}")
 	String age;
  
 	public Student() {}
