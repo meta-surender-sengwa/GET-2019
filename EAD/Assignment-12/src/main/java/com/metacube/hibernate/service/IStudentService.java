@@ -13,7 +13,7 @@ public interface IStudentService {
 	 * Method to add student in the database.
 	 * @param student is object of model class
 	 */
-	public void addStudnet(Student student);
+	public void addStudent(Student student);
 	
 	/**
 	 * Method to get student list from database.
