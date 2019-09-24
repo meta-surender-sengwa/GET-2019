@@ -21,9 +21,15 @@ import com.metacube.hibernate.services.IStudentService;
 @Controller
 public class StudentController {
 
+	/**
+	 * 
+	 */
 	@Autowired
-	IStudentService studentServics;
+	IStudentService studentService;
 
+	/**
+	 * Setting default value for message
+	 */
 	@Value("${welcome.message}")
 	private String message;
 
@@ -33,7 +39,7 @@ public class StudentController {
 		return "home";
 	}
 
-	@GetMapping("/AddStudentDetails")
+	@GetMapping("/AddStudentDetailsPage")
 	public String studentDetail(Model model) {
 		model.addAttribute(new Student());
 		return "StudentDetailForm";
@@ -42,37 +48,41 @@ public class StudentController {
 	@PostMapping("/AddStudentDetails")
 	public String addStudentDetail(@Validated Student student, BindingResult bindingResult) {
 
+		//	If validation error - then return to add student details jsp page
 		if (bindingResult.hasErrors()) {
 			return "StudentDetailForm";
 
+		//	Else call add method of the service class
 		} else {
 			System.out.println(student);
-			studentServics.addStudnet(student);
+			studentService.addStudent(student);
 			return "redirect:/home";
 		}
 	}
 
 	@GetMapping("/showStudent")
 	public String showStudent(Model model) {
-		List<Student> allStudent = studentServics.getAllStudent();
+		List<Student> allStudent = studentService.getAllStudent();
 		model.addAttribute("students", allStudent);
 		return "showStudent";
 	}
 
-	@GetMapping("/SearchStudent")
+	@GetMapping("/SearchStudentPage")
 	public String searchStudent(Model model) {
 		model.addAttribute(new Search());
 		return "searchStudent";
 	}
 
-	@PostMapping("/SearchStudent")
+	@GetMapping("/SearchStudent")
 	public String doSearch(@Validated Search search, BindingResult bindingResult, Model model) {
 
+		//	If validation error - then return to search student jsp page
 		if (bindingResult.hasErrors()) {
 			return "searchStudent";
-		
+			
+		//	Else search student based on the first name 
 		} else {
-			List<Student> student = studentServics.getStudentByName(search.getKey());
+			List<Student> student = studentService.getStudentByName(search.getFirstName());
 			model.addAttribute("students", student);
 			return "/showStudent";
 		}

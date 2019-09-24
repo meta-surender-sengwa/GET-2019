@@ -19,5 +19,5 @@ public interface StudentRepository extends CrudRepository<Student, Integer> {
 	 * @param key is the student's name to be searched
 	 * @return the details of the student 
 	 */
-	public List<Student> findByfirstNameContainingIgnoreCase(String key);
+	public List<Student> findByfirstNameContainingIgnoreCase(String firstName);
 }

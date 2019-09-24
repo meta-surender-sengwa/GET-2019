@@ -20,31 +20,41 @@ public class Student {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "Sid")
+	@Column(name = "student_id")
 	private int id;
 
 	@Pattern(regexp = "[a-zA-Z]{3,20}", message = "{validFirstName}")
+	@Column(name = "first_name")
 	String firstName;
 
 	@Pattern(regexp = "[a-zA-Z]{3,20}", message = "{validLastName}")
+	@Column(name = "last_name")
 	String lastName;
 
 	@Pattern(regexp = "[a-zA-Z ]{3,30}", message = "{validFatherName}")
+	@Column(name = "father_name")
 	String fatherName;
 
 	@Email
 	@NotBlank(message = "{blankEmail}")
+	@Column(name = "email")
 	String email;
 
 	@Pattern(regexp = "[1-12]{1,2}", message = "{validStudentClass}")
+	@Column(name = "student_class")
 	String studentClass;
 
 	@Pattern(regexp = "[0-9]{1,2}", message = "{validAge}")
+	@Column(name = "age")
 	String age;
 
+	/**
+	 * Default Constructor
+	 */
 	public Student() {
+		
 	}
-
+	
 	/**
 	 * Constructor for initializing
 	 * @param firstName

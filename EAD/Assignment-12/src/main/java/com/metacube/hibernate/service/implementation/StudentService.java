@@ -28,7 +28,7 @@ public class StudentService implements IStudentService {
 	 */
 	@Override
 	@Transactional
-	public void addStudnet(Student student) {
+	public void addStudent(Student student) {
 		repository.save(student);
 	}
 	
@@ -46,8 +46,8 @@ public class StudentService implements IStudentService {
 	 */
 	@Override
 	@Transactional
-	public List<Student> getStudentByName(String Key) {
-		return repository.findByfirstNameContainingIgnoreCase(Key);
+	public List<Student> getStudentByName(String firstName) {
+		return repository.findByfirstNameContainingIgnoreCase(firstName);
 	}
 
 }

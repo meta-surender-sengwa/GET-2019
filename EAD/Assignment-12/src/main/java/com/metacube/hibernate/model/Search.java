@@ -9,13 +9,13 @@ import javax.validation.constraints.Pattern;
 public class Search {
 
 	@Pattern(regexp = "[a-zA-Z]{3,20}", message = "{validFirstName}")
-	String key;
+	String firstName;
 
-	public String getKey() {
-		return key;
+	public String getFirstName() {
+		return firstName;
 	}
 
-	public void setKey(String key) {
-		this.key = key;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
 }

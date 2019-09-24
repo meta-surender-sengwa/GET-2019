@@ -11,9 +11,9 @@
 		<h1>${message}</h1>
 
 		<h2>
-			<br> <a href="AddStudentDetails">Add Student Detail</a><br><br>
+			<br> <a href="AddStudentDetailsPage">Add Student Detail</a><br><br>
 			<a href="showStudent">Show All Student</a><br><br>
-			<a href="/SearchStudent">Search Student</a>
+			<a href="/SearchStudentPage">Search Student</a>
 		</h2>
 	</div>
 </body>
