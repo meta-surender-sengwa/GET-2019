@@ -26,5 +26,5 @@ public interface IStudentService {
 	 * @param Key is the key(name) used for searching
 	 * @return the student details
 	 */
-	public List<Student> getStudentByName(String Key);
+	public List<Student> getStudentByName(String firstName);
 }
