@@ -22,7 +22,7 @@ import com.metacube.hibernate.services.IStudentService;
 public class StudentController {
 
 	/**
-	 * 
+	 * Creating object of Student service interface
 	 */
 	@Autowired
 	IStudentService studentService;
