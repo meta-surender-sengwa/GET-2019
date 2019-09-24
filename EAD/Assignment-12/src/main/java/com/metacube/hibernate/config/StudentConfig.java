@@ -75,6 +75,9 @@ public class StudentConfig {
 		return dataSource;
 	}
 
+	/**
+	 * Helper Method
+	 */
 	private Properties hibernateProperties() {
 		
 		Properties properties = new Properties();
