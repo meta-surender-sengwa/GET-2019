@@ -83,6 +83,8 @@ li a:hover {
 
 /*  Style for Circle Container used in the pricing container   */
 .circle-container {
+    display: block;
+    margin: auto;
     border: 2px solid black;
     border-radius: 50%;
     width : 80px;
