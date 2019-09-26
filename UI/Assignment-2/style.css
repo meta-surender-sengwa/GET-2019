@@ -1,0 +1,128 @@
+/*  Style for un-ordered list used for navigation bar */
+ul {
+    position: fixed;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: grey;
+    top: 0;
+    width: 100%;
+    white-space: nowrap;
+}
+
+/*  Style for li */
+li {
+    float: left;
+}
+
+/*  Style for li a */
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/*  Style for li a when they are hovered over by mouse  */
+li a:hover {
+    background-color: black;
+    color: white;
+}
+
+/*  Style for Collapsible Buttons */
+.collapsible {
+    background-color:grey;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    font-size: 15px;
+}
+
+/* Style for Collapsible Buttons when they are hovered by mouse */
+.active,
+.collapsible:hover {
+    background-color: black;
+}
+
+/* Style for Collapsible Buttons when the buttons are not active*/
+.collapsible:after {
+    content: '\002B';
+    color: white;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+/* Style for Collapsible Buttons when buttons are active */
+.active:after {
+    content: "\2212";
+}
+
+/* Style for content under collapsible buttons */
+.content {
+    padding: 20px;
+    height: auto;
+    width: 100%;
+}
+
+/*  Style for pricing container used to show the plan details for different vehicle types   */
+.pricing-container {
+    box-sizing: border-box;
+    border : 2px solid black;
+    border-radius: 5px;
+    width: 13%;
+    float: left;
+    margin-left: 220px;
+    text-align: center;
+}
+
+/*  Style for Circle Container used in the pricing container   */
+.circle-container {
+    border: 2px solid black;
+    border-radius: 50%;
+    width : 80px;
+    height : 80px;
+    padding: 2px;
+    text-align: auto;
+}
+
+section, div, table, h2 {
+    text-align: center;
+}
+
+h2 {
+    padding-top: 40px;
+    padding-bottom: 40px; 
+}
+
+section {
+    margin-top: 80px;
+    margin-bottom: 80px;
+    display: block;
+}
+
+button {
+    padding: 10px 40px;
+}
+
+td, th {
+    padding: 10px;
+    column-span: 1px;
+}
+
+td {
+    text-align: left;
+}
+
+div, th {
+    text-align: center;
+}
+
+td.put-to-center {
+    text-align: center;
+}
