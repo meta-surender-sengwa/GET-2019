@@ -1,0 +1,302 @@
+* {
+    font-family: Raleway;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-image: url("img/bodybg.png");
+    background-color: #383a53;
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    background-size: 100% 100%;
+}
+
+.firstpart {
+    background-image: url("img/homebg.png");
+    background-size: 100% 100%;
+    display: flex;
+}
+
+#phone1 {
+    margin-left: -400px;
+    margin-top: 0px;
+    margin-block-start: 0%;
+    height: 500px;
+    width: auto;
+}
+
+h1 {
+    margin-left: -1000px;
+    margin-top: 0px;
+    font-size: 50px;
+    width: 400px;
+}
+
+.downloadButton {
+    margin-left: -1000px;
+    margin-top: 50px;
+    padding: 10px;
+}
+
+.featureButton {
+    padding: 10px;
+}
+
+.button {
+    color: #4CAF50;
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button1 {
+    font-size: 19px;
+    background-color: #fd6a45;
+    text-decoration: none;
+    color: white;
+    padding: 23px;
+    font-family: Raleway;
+    border: 1px;
+    border-radius: 4px;
+    margin-block-end: auto;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #648cfe;
+}
+
+.firstpart .list-part ul li {
+    display: inline;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 10px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+li a:hover {
+    background-color: cornflowerblue;
+}
+
+.grid-container {
+    display: grid;
+    grid-column-gap: 10px;
+    grid-template-columns: auto auto auto;
+    padding: 80px;
+    margin-left: -270px;
+    margin-top: 50px;
+}
+
+.item {
+    padding: 7px;
+    margin: 50px;
+}
+
+.heading2 {
+    padding-top: 90px;
+    font-family: Raleway;
+    color: #5f85f0;
+    font-size: 30px;
+    width: 400px;
+}
+
+.subHeading {
+    font-family: Raleway;
+    color: grey;
+    padding: 10px;
+    width: 200px;
+}
+
+#cards {
+    display: flex;
+    justify-content: space-around;
+    padding: 78px;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flex-container>div {
+    width: 700px;
+    margin: 5px;
+    text-align: center;
+    line-height: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 84px;
+}
+
+.textbox {
+    text-align: justify;
+    -moz-text-align-last: left;
+    text-align-last: left;
+    margin-left: 170px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.center {
+    margin: auto;
+    width: 15%;
+}
+
+.card1 {
+    width: 400px;
+    height: auto;
+    margin-left: 100px;
+}
+
+.card2 {
+    width: 400px;
+    height: auto;
+    margin-left: 100px;
+}
+
+.card3 {
+    width: 400px;
+    height: auto;
+    margin-left: 100px;
+}
+
+.diamondIcon {
+    color: rgb(247, 115, 8);
+    font-size: 40px;
+}
+
+.stackIcon {
+    color: rgb(247, 115, 8);
+    font-size: 40px;
+}
+
+.homeIcon {
+    color: rgb(247, 115, 8);
+    font-size: 40px;
+}
+
+.usablity {
+    margin-left: 50px;
+    margin-top: -40px;
+}
+
+.parallax {
+    margin-left: 50px;
+    margin-top: -40px;
+}
+
+.unlimited {
+    margin-left: 50px;
+    margin-top: -40px;
+}
+
+.description {
+    margin-left: 50px;
+    display: inline-block;
+    margin-top: 13px;
+    width: 256px;
+    color: #9c9b9a;
+    justify-content: stretch;
+}
+
+.cloudImage {
+    font-size: 22px;
+    font-weight: 700;
+    height: auto;
+    width: 200px;
+}
+
+.cloudHeading {
+    margin-inline-start: -510px;
+}
+
+.sunImage {
+    margin-top: 156px;
+    margin-left: -353px;
+}
+
+.phone2 {
+    margin-right: 363px;
+}
+
+.cloudyText {
+    transform: rotate(90deg);
+    font-size: 200px;
+    z-index: -138;
+    display: inline-block;
+    position: relative;
+    color: lightgray;
+    margin-left: -112px;
+    margin-top: -57px;
+    display: inline-flex;
+    width: 1202px;
+    height: 99px;
+}
+
+.sunnyText {
+    transform: rotate(90deg);
+    font-size: 200px;
+    z-index: -138;
+    display: inline-block;
+    position: relative;
+    color: lightgray;
+    margin-left: -298px;
+    margin-top: -57px;
+    display: inline-flex;
+    width: 1202px;
+    height: 99px
+}
+
+.cursive {
+    margin-top: -22px;
+    font-size: 16px;
+    color: grey;
+    font-family: Raleway
+}
+
+.author {
+    margin-top: -22px;
+    margin-left: -372px;
+    font-size: 13px;
+    color: gray;
+    font-family: inherit;
+    margin-bottom: -32px;
+}
+
+.quoteOpen {
+    color: #648cfe;
+    margin-left: -428px;
+}
+
+.quoteClose {
+    color: #648cfe;
+    margin-left: 441px;
+    display: grid;
+    padding-bottom: 36px;
+}
+
+.awesomeIcon {
+    color: white;
+    font-size: 21px;
+}
+
+footer {
+    background-color: #383a53;
+    height: 180px;
+}
