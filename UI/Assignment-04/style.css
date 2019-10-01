@@ -22,7 +22,7 @@ body {
 }
 
 #phone1 {
-    margin-left: -400px;
+    margin-left: -500px;
     margin-top: 0px;
     margin-block-start: 0%;
     height: 500px;
@@ -49,21 +49,21 @@ h1 {
 .button {
     color: #4CAF50;
     border: none;
-    padding: 15px 32px;
+    padding: 15px 30px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 15px;
     margin: 4px 2px;
     cursor: pointer;
 }
 
 .button1 {
-    font-size: 19px;
+    font-size: 20px;
     background-color: #fd6a45;
     text-decoration: none;
     color: white;
-    padding: 23px;
+    padding: 25px;
     font-family: Raleway;
     border: 1px;
     border-radius: 4px;
@@ -86,26 +86,22 @@ li a {
     display: block;
     color: white;
     text-align: center;
-    padding: 14px 10px;
+    padding: 15px 10px;
     text-decoration: none;
     font-size: 20px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
 }
 
 li a:hover {
     background-color: cornflowerblue;
 }
 
-.grid-container {
-    display: grid;
-    grid-column-gap: 10px;
-    grid-template-columns: auto auto auto;
-    padding: 80px;
-    margin-left: -270px;
-    margin-top: 50px;
-}
-
 .item {
-    padding: 7px;
+    padding: 10px;
     margin: 50px;
 }
 
@@ -127,7 +123,7 @@ li a:hover {
 #cards {
     display: flex;
     justify-content: space-around;
-    padding: 78px;
+    padding: 80px;
 }
 
 .flex-container {
@@ -141,12 +137,11 @@ li a:hover {
     text-align: center;
     line-height: 50px;
     font-family: Arial, Helvetica, sans-serif;
-    margin-left: 84px;
+    margin-left: 80px;
 }
 
 .textbox {
     text-align: justify;
-    -moz-text-align-last: left;
     text-align-last: left;
     margin-left: 170px;
     font-size: 15px;
@@ -159,18 +154,6 @@ li a:hover {
 }
 
 .card1 {
-    width: 400px;
-    height: auto;
-    margin-left: 100px;
-}
-
-.card2 {
-    width: 400px;
-    height: auto;
-    margin-left: 100px;
-}
-
-.card3 {
     width: 400px;
     height: auto;
     margin-left: 100px;
@@ -196,107 +179,92 @@ li a:hover {
     margin-top: -40px;
 }
 
-.parallax {
-    margin-left: 50px;
-    margin-top: -40px;
-}
-
-.unlimited {
-    margin-left: 50px;
-    margin-top: -40px;
-}
-
 .description {
     margin-left: 50px;
     display: inline-block;
-    margin-top: 13px;
-    width: 256px;
+    margin-top: 15px;
+    width: 250px;
     color: #9c9b9a;
     justify-content: stretch;
 }
 
 .cloudImage {
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 700;
     height: auto;
     width: 200px;
 }
 
 .cloudHeading {
-    margin-inline-start: -510px;
+    margin-inline-start: -500px;
 }
 
 .sunImage {
-    margin-top: 156px;
-    margin-left: -353px;
+    margin-top: 160px;
+    margin-left: -360px;
 }
 
 .phone2 {
-    margin-right: 363px;
+    margin-right: 360px;
 }
 
-.cloudyText {
+.background-text {
     transform: rotate(90deg);
     font-size: 200px;
     z-index: -138;
     display: inline-block;
     position: relative;
     color: lightgray;
-    margin-left: -112px;
-    margin-top: -57px;
+    margin-left: -120px;
+    margin-top: -60px;
     display: inline-flex;
-    width: 1202px;
-    height: 99px;
-}
-
-.sunnyText {
-    transform: rotate(90deg);
-    font-size: 200px;
-    z-index: -138;
-    display: inline-block;
-    position: relative;
-    color: lightgray;
-    margin-left: -298px;
-    margin-top: -57px;
-    display: inline-flex;
-    width: 1202px;
-    height: 99px
+    width: 1200px;
+    height: 100px;
 }
 
 .cursive {
-    margin-top: -22px;
-    font-size: 16px;
+    margin-top: -20px;
+    font-size: 15px;
     color: grey;
     font-family: Raleway
 }
 
 .author {
-    margin-top: -22px;
-    margin-left: -372px;
-    font-size: 13px;
+    margin-top: -20px;
+    margin-left: -370px;
+    font-size: 15px;
     color: gray;
     font-family: inherit;
-    margin-bottom: -32px;
+    margin-bottom: -30px;
 }
 
 .quoteOpen {
     color: #648cfe;
-    margin-left: -428px;
+    margin-left: -420px;
 }
 
 .quoteClose {
     color: #648cfe;
-    margin-left: 441px;
+    margin-left: 440px;
     display: grid;
-    padding-bottom: 36px;
+    padding-bottom: 40px;
 }
 
 .awesomeIcon {
     color: white;
-    font-size: 21px;
+    font-size: 20px;
 }
 
 footer {
     background-color: #383a53;
     height: 180px;
+}
+
+.grid-container {
+    display: grid;
+    grid-column-gap: 10px;
+    grid-template-columns: auto auto auto;
+    padding: 80px;
+    margin-left: -270px;
+    margin-top: 50px;
 }
