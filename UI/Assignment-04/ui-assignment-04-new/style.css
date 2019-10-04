@@ -1,0 +1,87 @@
+* {
+    font-family: Raleway;
+}
+
+body {
+    text-align: center;
+    background-image: url("img/bodybg.png");
+    background-color: #383a53;
+    overflow-x: hidden;
+    padding: 10px;
+}
+
+div {
+    flex: 1;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+li {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.set-header {
+    background-image: url("img/homebg.png");
+    background-size: 100% 100%;
+    margin-bottom: 20px;
+    margin-top: 0px;
+}
+
+.set-download-section {
+    background-image: url("img/homebg.png");
+}
+
+.first-part {
+    display: flex;
+    color: white;
+}
+
+.set-footer {
+    background-color: #383a53;
+    color: white;
+}
+
+.set-download-section {
+    background-image: url("img/homebg.png");
+    color: white;
+}
+
+.set-color-blue {
+    color: blue;
+}
+
+.set-color-sky-blue {
+    color: skyblue;
+}
+
+.btn {
+    color: black;   
+    padding: 10px 30px;
+    border-radius: 10px;
+    border: none;
+}
+
+.btn-download {
+    background-color: greenyellow;
+}
+
+.btn-features {
+    background-color: orangered;
+    align-self: right;
+}
