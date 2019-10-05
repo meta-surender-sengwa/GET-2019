@@ -1,13 +1,10 @@
 body {
     overflow-x: hidden;
 }
+
 a {
     text-decoration: none !important;
     color: black;
-}
-
-.dashboard a:hover {
-    color:mediumpurple;
 }
 
 .sidebar {
@@ -15,8 +12,13 @@ a {
 }
 
 .dashboard li {
-    padding: 13px 0px !important;
+    padding: 10px 0px !important;
 }
+
+.dashboard a:hover {
+    color:mediumpurple;
+}
+
 
 .dashboard li:hover {
     color: mediumpurple !important;
@@ -32,7 +34,7 @@ a {
 
 #header {
     height:75px;
-    background-color: #5B6BE8;
+    background-color: rgb(97, 106, 202);
 }
 
 .search {
@@ -46,15 +48,11 @@ a {
     color:#ADB5F4;
 }
 
-.medium {
-    font-size: 15px;
-}
-
 #header ul {
     float: right;
 }
 
-.headerBadge {
+.header-badge {
     position:relative;
     top:-10px;
     left:-10px;
@@ -70,9 +68,4 @@ a {
 
 .purple {
     background-color: #5B6BE8;
-}
-
-#graph {
-    height: 450px;
-    width: 700px;
 }
