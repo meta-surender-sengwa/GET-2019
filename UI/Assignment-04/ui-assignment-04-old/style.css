@@ -1,0 +1,270 @@
+* {
+    font-family: Raleway;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-image: url("img/bodybg.png");
+    background-color: #383a53;
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    background-size: 100% 100%;
+}
+
+.firstpart {
+    background-image: url("img/homebg.png");
+    background-size: 100% 100%;
+    display: flex;
+}
+
+#phone1 {
+    margin-left: -500px;
+    margin-top: 0px;
+    margin-block-start: 0%;
+    height: 500px;
+    width: auto;
+}
+
+h1 {
+    margin-left: -1000px;
+    margin-top: 0px;
+    font-size: 50px;
+    width: 400px;
+}
+
+.downloadButton {
+    margin-left: -1000px;
+    margin-top: 50px;
+    padding: 10px;
+}
+
+.featureButton {
+    padding: 10px;
+}
+
+.button {
+    color: #4CAF50;
+    border: none;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button1 {
+    font-size: 20px;
+    background-color: #fd6a45;
+    text-decoration: none;
+    color: white;
+    padding: 25px;
+    font-family: Raleway;
+    border: 1px;
+    border-radius: 4px;
+    margin-block-end: auto;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #648cfe;
+}
+
+.firstpart .list-part ul li {
+    display: inline;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 15px 10px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: cornflowerblue;
+}
+
+.item {
+    padding: 10px;
+    margin: 50px;
+}
+
+.heading2 {
+    padding-top: 90px;
+    font-family: Raleway;
+    color: #5f85f0;
+    font-size: 30px;
+    width: 400px;
+}
+
+.subHeading {
+    font-family: Raleway;
+    color: grey;
+    padding: 10px;
+    width: 200px;
+}
+
+#cards {
+    display: flex;
+    justify-content: space-around;
+    padding: 80px;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flex-container>div {
+    width: 700px;
+    margin: 5px;
+    text-align: center;
+    line-height: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 80px;
+}
+
+.textbox {
+    text-align: justify;
+    text-align-last: left;
+    margin-left: 170px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.center {
+    margin: auto;
+    width: 15%;
+}
+
+.card1 {
+    width: 400px;
+    height: auto;
+    margin-left: 100px;
+}
+
+.diamondIcon {
+    color: rgb(247, 115, 8);
+    font-size: 40px;
+}
+
+.stackIcon {
+    color: rgb(247, 115, 8);
+    font-size: 40px;
+}
+
+.homeIcon {
+    color: rgb(247, 115, 8);
+    font-size: 40px;
+}
+
+.usablity {
+    margin-left: 50px;
+    margin-top: -40px;
+}
+
+.description {
+    margin-left: 50px;
+    display: inline-block;
+    margin-top: 15px;
+    width: 250px;
+    color: #9c9b9a;
+    justify-content: stretch;
+}
+
+.cloudImage {
+    font-size: 20px;
+    font-weight: 700;
+    height: auto;
+    width: 200px;
+}
+
+.cloudHeading {
+    margin-inline-start: -500px;
+}
+
+.sunImage {
+    margin-top: 160px;
+    margin-left: -360px;
+}
+
+.phone2 {
+    margin-right: 360px;
+}
+
+.background-text {
+    transform: rotate(90deg);
+    font-size: 200px;
+    z-index: -138;
+    display: inline-block;
+    position: relative;
+    color: lightgray;
+    margin-left: -120px;
+    margin-top: -60px;
+    display: inline-flex;
+    width: 1200px;
+    height: 100px;
+}
+
+.cursive {
+    margin-top: -20px;
+    font-size: 15px;
+    color: grey;
+    font-family: Raleway
+}
+
+.author {
+    margin-top: -20px;
+    margin-left: -370px;
+    font-size: 15px;
+    color: gray;
+    font-family: inherit;
+    margin-bottom: -30px;
+}
+
+.quoteOpen {
+    color: #648cfe;
+    margin-left: -420px;
+}
+
+.quoteClose {
+    color: #648cfe;
+    margin-left: 440px;
+    display: grid;
+    padding-bottom: 40px;
+}
+
+.awesomeIcon {
+    color: white;
+    font-size: 20px;
+}
+
+footer {
+    background-color: #383a53;
+    height: 180px;
+}
+
+.grid-container {
+    display: grid;
+    grid-column-gap: 10px;
+    grid-template-columns: auto auto auto;
+    padding: 80px;
+    margin-left: -270px;
+    margin-top: 50px;
+}
