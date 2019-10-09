@@ -16,10 +16,10 @@
     <body class="mx-2">
         <div class="row">
             <div class="col-2 p-3" id="sidebar">
-                <div class="text-center py-3">
+                <div class="text-center py-3 position-fixed">
                     <h4><strong>ANNEX</strong></h4>
                 </div>
-                <div class="p-3 ml-3 dashboard" id="accordion">
+                <div class="p-3 mt-5 ml-3 dashboard fixed-sidebar" id="accordion">
                     <p class="text-muted mb-2">Main</p>
                     <ul class="list-unstyled">
                         <li>
@@ -170,11 +170,13 @@
 
             <div class="col-10" id="main">
                 <div id="header" class="row">
-                    <div class="col-3 m-3 pt-2">
-                        <input type="text" class="px-3 search" placeholder="Search...">
-                        <i class="fas fa-search p-2 search"></i>
+                    <div class="col-4 m-3 pt-2">
+                        <span>
+                            <input type="text" class="px-1 search" placeholder="Search...">
+                            <i class="fas fa-search search"></i>
+                        </span>
                     </div>
-                    <div class="col-8">
+                    <div class="col-7">
                         <ul class="list-unstyled d-flex">
                             <li class="py-2 mt-1 dropdown">
                                 <a href="#" class="nav-link text-dark" id="language" role="button" data-toggle="dropdown">
@@ -205,7 +207,7 @@
                                 </div>
                             </li>
 
-                            <li class="pl-4 pr-3 py-2 mt-1 dropdown">
+                            <li class="pl-2 pr-1 py-2 mt-1 dropdown">
                                 <a href="#" class="nav-link text-dark" data-toggle="dropdown">
                                     <i class="far fa-envelope text-white fa-lg"></i>
                                     <span class="badge badge-danger header-badge">22</span>
@@ -403,26 +405,31 @@
 
                 <div class="row">
                     <div class="col-8 mt-4">
-                        <img src="images/graph.PNG">
+                        <img src="images/graph.PNG" height="100%" width="100%">
                     </div>
 
                     <div class="col-4 mt-4 ml-0">
                         <div class="card">
                             <div class="card-body ml-2">
-                                <a href="#" class="btn btn-primary btn-sm float-right">More Info</a>
-                                <span class="text-dark"><strong>Revenue By Country</strong></span>
-                                <ul class="list-unstyled list-inline text-center mt-4">
-                                    <li class="list-inline-item">
-                                        <p><i class="mdi mdi-checkbox-blank-circle text-primary mr-2"></i>Canada</p>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <p><i class="mdi mdi-checkbox-blank-circle text-info mr-2"></i>USA</p>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <p><i class="mdi mdi-checkbox-blank-circle text-greylight mr-2"></i>London</p>
-                                    </li>
-                                </ul>
-                                <img src="images/pie-chart.PNG" class="rounded-circle pl-4">
+                                <div>
+                                    <a href="#" class="btn btn-primary btn-sm float-right">More Info</a>
+                                    <span class="text-dark"><strong>Revenue By Country</strong></span>
+                                    <ul class="list-unstyled list-inline text-center mt-4">
+                                        <li class="list-inline-item">
+                                            <p><i class="mdi mdi-checkbox-blank-circle text-primary mr-2"></i>Canada</p>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <p><i class="mdi mdi-checkbox-blank-circle text-info mr-2"></i>USA</p>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <p><i class="mdi mdi-checkbox-blank-circle text-greylight mr-2"></i>London</p>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div>
+                                    <img src="images/pie-chart.PNG" class="rounded-circle pl-4" height="100%" width="100%">
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -483,7 +490,7 @@
                                     </div>
                                 </div>
                                 <div class="justify-content-center text-center">
-                                    <img src="images/morris-chart.PNG">
+                                    <img src="images/morris-chart.PNG" height="100%" width="100%">
                                 </div>
                             </div>
                         </div>

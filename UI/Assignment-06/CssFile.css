@@ -69,3 +69,13 @@ a {
 .purple {
     background-color: #5B6BE8;
 }
+
+.annex {
+    position-fixed
+}
+
+.fixed-sidebar {
+    position: fixed;
+    height: 680px;
+    overflow: auto;
+}
