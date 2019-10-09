@@ -79,3 +79,8 @@ a {
     height: 680px;
     overflow: auto;
 }
+
+.set-icon-inside {
+    margin-top: 5px;
+    margin-left: -25px;
+}
