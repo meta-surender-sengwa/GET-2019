@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Employee Registration</title>
+
+<script>	
+var priceInINR = {
+	"cycle" : [5,100,500],
+	"bike" : [10,250,1000],
+	"car" : [20,1000,3500]
+}
+	
+var currency = { 
+	"ÏNR" : 1,
+	"USD" : 0.014,
+	"YEN" : 1.48 
+}
+	
+const convertToUSD = 0.014;
+
+function show() {
+	document.getElementById("plan").style.display= "block";
+   	
+   	var vehicleType = document.getElementById("vehicle_type").value;
+   	
+	document.getElementById("daily").innerHTML = priceInINR[vehicleType][0];
+   	document.getElementById("monthly").innerHTML = priceInINR[vehicleType][1];
+   	document.getElementById("yearly").innerHTML = priceInINR[vehicleType][2];
+	
+	document.getElementById("bill").style.display = "block";
+}
+
+function convertCurrency(vehicleType, converter){
+	
+	document.getElementById("daily").innerHTML = priceInINR[vehicleType][0] * converter;
+    document.getElementById("monthly").innerHTML = priceInINR[vehicleType][1] * converter;
+    document.getElementById("yearly").innerHTML = priceInINR[vehicleType][2] * converter;
+	  
+}
+
+function changePrice() {
+	var vehicleType = document.getElementById("vehicle_type").value;
+	var currencyType = document.getElementById("currency_type").value;
+	
+	convertCurrency(vehicleType, currency[currencyType]);
+}
+
+function calculateBill() {
+    
+    var vehicleType = document.getElementById("vehicle_type").value;
+    var total;
+    
+    for(var index=0; index<3; index++) {
+		
+    	if(document.forms.plan_form.selected_plan[index].checked) {
+    		total = priceInINR[vehicleType][index] * currency["USD"] ;
+    		alert("Total bill in USD : " + total + " $");
+    	}	
+    }
+}
+
+</script>
+
+</head>
+<body>
+
+	<div align="center">
+		<h1>Parking System</h1><br>
+	</div> 
+	
+	<div id="vehicle" align="center">
+		<h3>Vehicle registration form</h3>
+		
+		<form action="VehicleRegisteration" method="POST" name="vehicleRegisterationform">
+			<input placeholder="Vehicle Name" name="vehicleName" type="text" size="30" pattern="[a-zA-Z0-9\s]+" required><br><br>
+			<div align="center">Vehicle Type:
+				<select id="vehicle_type" onchange="show()">
+					<option value="none">Select</option>
+					<option value="cycle">Cycle</option>
+					<option value="bike">Bike</option>
+					<option value="car"">Car</option>
+				</select>
+			</div><br>
+			<input placeholder="Vehicle Number" name="vehicleNumber" type="text" size="30" pattern="[a-zA-Z0-9\s]+" required><br><br>
+			<input placeholder="Employee Id" name="employeeId" type="text" size="30" required><br><br>
+			<textarea name="vehicle_identification" rows="5" cols="31" placeholder="Description"></textarea><br><br>
+
+			<input type="submit" value="Add Vehicle">
+			</form>
+	</div>
+	
+	<div id="plan" align="center" style="display: none;">
+		<div align="center">
+			<br><br>Choose Currency : 
+			<select id="currency_type" onchange="changePrice()">
+				<option value="INR">INR</option>
+				<option value="USD">USD</option>
+				<option value="YEN">YEN</option>
+			</select>
+		</div>
+		
+		<div align="center">
+			<br><br>Choose your plan<br> 
+			<form action="" method="POST" name="plan_form" onsubmit="return false">
+				<input type="radio" name="selected_plan" value="">
+				<label id="daily"></label><br>
+			
+				<input type="radio" name="selected_plan" value="">
+				<label id="monthly"></label><br>
+				
+				<input type="radio" name="selected_plan" value="">
+				<label  id="yearly"></label>
+			</form>
+		</div>
+	</div>
+	
+	<div id="bill" align="center" hidden>
+		<br><input type="button" type="submit" value="Get your pass" onclick="calculateBill()"></button>
+		<label id="show_price"></label>
+	</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
