@@ -1,0 +1,547 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>BootStrap Assignment</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="https://getbootstrap.com/docs/4.1/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="CssFile.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/2.8.94/css/materialdesignicons.min.css">
+    </head>
+    <body class="mx-2">
+        <div class="row">
+            <div class="col-2 p-3" id="sidebar">
+                <div class="text-center py-3">
+                    <h4><strong>ANNEX</strong></h4>
+                </div>
+                <div class="p-3 ml-3 dashboard" id="accordion">
+                    <p class="text-muted mb-2">Main</p>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="#" class="row">
+                                <div class="col-2"><img src="images/dashboard.PNG" height="20px"></div>
+                                <div class="col-8">Dashboard</div>
+                                <div><span class="badge badge-pill mt-1 badge-primary">7</span></div>
+                            </a>
+                        </li>
+                        <li data-toggle="collapse" data-target="#collapse-advanced-ui">
+                            <a href="#" class="row">
+                                <div class="col-2">
+                                    <img src="images/advanced-ui.PNG" height="20px">
+                                </div>
+                                <div class="col-8">Advanced UI</div>
+                                <div><i class="fa fa-angle-right pt-1"></i></div>
+                            </a>
+                        </li>
+                        <ul id="collapse-advanced-ui" class="collapse list-unstyled sub-menu">
+                            <li><a href="#" class="text-muted">Highlight</a></li>
+                            <li><a href="#" class="text-muted">Rating</a></li>
+                            <li><a href="#" class="text-muted">Alertify</a></li>
+                            <li><a href="#" class="text-muted">Range Slider</a></li>
+                        </ul>
+                        <li>
+                            <a href="#" class="row">
+                                <div class="col-2">
+                                    <img src="images/calender.PNG" height="20px">
+                                </div>
+                                <div class="col-8">Calender</div>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <p class="text-muted mb-2">Components</p>
+                    <ul class="list-unstyled">
+                        <li id="uiElements" data-toggle="collapse" data-target="#collapse-ui-elements">
+                            <a href="#" class="row">
+                                <div class="col-2">
+                                    <img src="images/ui-elements.PNG" height="20px">
+                                </div>
+                                <div class="col-8">UI Elements</div>
+                                <div><i class="fa fa-angle-right pt-1"></i></div>
+                            </a>
+                        </li>
+                        <ul id="collapse-ui-elements" class="collapse list-unstyled sub-menu">
+                            <li><a href="#" class="text-muted">Buttons</a></li>
+                            <li><a href="#" class="text-muted">Cards</a></li>
+                            <li><a href="#" class="text-muted">Tabs & Accordions</a></li>
+                            <li><a href="#" class="text-muted">Modals</a></li>
+                            <li><a href="#" class="text-muted">Images</a></li>
+                            <li><a href="#" class="text-muted">Alerts</a></li>
+                            <li><a href="#" class="text-muted">Progress Bars</a></li>
+                            <li><a href="#" class="text-muted">Dropdowns</a></li>
+                            <li><a href="#" class="text-muted">Lightbox</a></li>
+                            <li><a href="#" class="text-muted">Navs</a></li>
+                            <li><a href="#" class="text-muted">Paginations</a></li>
+                        </ul>
+                        <li><a href="#" class="row">
+                                <div class="col-2">
+                                    <img src="images/forms.PNG" height="20px">
+                                </div>
+                                <div class="col-8">Forms</div>
+                                <div><span class="badge badge-pill mt-1 badge-primary">8</span></div>
+                            </a>
+                        </li>
+                        <li id="charts" data-toggle="collapse" data-target="#collapse-charts">
+                            <a href="#" class="row">
+                                <div class="col-2">
+                                    <img src="images/charts.PNG" height="20px">
+                                </div>
+                                <div class="col-8">Charts</div>
+                                <div><i class="fa fa-angle-right pt-1"></i></div>
+                            </a>
+                        </li>
+                        <ul id="collapse-charts" class="collapse list-unstyled sub-menu">
+                            <li><a href="#" class="text-muted">Morris Chart</a></li>
+                            <li><a href="#" class="text-muted">Chartist Chart</a></li>
+                            <li><a href="#" class="text-muted">Chartjs Chart</a></li>
+                            <li><a href="#" class="text-muted">Flot Chart</a></li>
+                            <li><a href="#" class="text-muted">C3 Chart</a></li>
+                            <li><a href="#" class="text-muted">JQuery Knob Chart</a></li>
+                        </ul>
+                        <li id="icons" data-toggle="collapse" data-target="#collapse-icons">
+                            <a href="#" class="row">
+                                <div class="col-2">
+                                    <img src="images/icons.PNG" height="20px">
+                                </div>
+                                <div class="col-8">Icons</div>
+                                <div><i class="fa fa-angle-right pt-1"></i></div>
+                            </a>
+                        </li>
+                        <ul id="collapse-icons" class="collapse list-unstyled sub-menu">
+                            <li><a href="#" class="text-muted">Material Design</a></li>
+                            <li><a href="#" class="text-muted">Ion Icons</a></li>
+                            <li><a href="#" class="text-muted">Font Awesome</a></li>
+                            <li><a href="#" class="text-muted">Themify Icons</a></li>
+                            <li><a href="#" class="text-muted">Dripicons</a></li>
+                            <li><a href="#" class="text-muted">Typicons Icons</a></li>
+                        </ul>
+                        <li id="tables" data-toggle="collapse" data-target="#collapse-tables">
+                            <a href="#" class="row">
+                                <div class="col-2">
+                                    <img src="images/tables.PNG" height="20px">
+                                </div>
+                                <div class="col-8">Tables</div>
+                                <div><i class="fa fa-angle-right pt-1"></i></div>
+                            </a>
+                        </li>
+                        <ul id="collapse-tables" class="collapse list-unstyled sub-menu">
+                            <li><a href="#" class="text-muted">Basic Tables</a></li>
+                            <li><a href="#" class="text-muted">Data Table</a></li>
+                            <li><a href="#" class="text-muted">Responsive Table</a></li>
+                            <li><a href="#" class="text-muted">Editable Table</a></li>
+                        </ul>
+                    </ul>
+                    <p class="text-muted mb-2">Extra</p>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="row">
+                                <div class="col-2">
+                                    <img src="images/maps.PNG" height="20px">
+                                </div>
+                                <div class="col-8">Maps</div>
+                                <div><span class="badge badge-pill mt-1 badge-danger">2</span></div>
+                            </a>
+                        </li>
+                        <li id="pages" data-toggle="collapse" data-target="#collapse-pages">
+                            <a href="#" class="row">
+                                <div class="col-2">
+                                    <img src="images/pages.PNG" height="20px">
+                                </div>
+                                <div class="col-8">Pages</div>
+                                <i class="fa fa-angle-right pt-1"></i>
+                            </a>
+                        </li>
+                        <ul id="collapse-pages" class="collapse list-unstyled sub-menu">
+                            <li><a href="#" class="text-muted">Login</a></li>
+                            <li><a href="#" class="text-muted">Register</a></li>
+                            <li><a href="#" class="text-muted">Recover Pssword</a></li>
+                            <li><a href="#" class="text-muted">Lock Screen</a></li>
+                            <li><a href="#" class="text-muted">Blank Page</a></li>
+                            <li><a href="#" class="text-muted">Error 404</a></li>
+                            <li><a href="#" class="text-muted">Error 505</a></li>
+                        </ul>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-10" id="main">
+                <div id="header" class="row">
+                    <div class="col-3 m-3 pt-2">
+                        <input type="text" class="px-3 search" placeholder="Search...">
+                        <i class="fas fa-search p-2 search"></i>
+                    </div>
+                    <div class="col-8">
+                        <ul class="list-unstyled d-flex">
+                            <li class="py-2 mt-1 dropdown">
+                                <a href="#" class="nav-link text-dark" id="language" role="button" data-toggle="dropdown">
+                                    <span class="text-white px-3">English</span>
+                                    <img src="images/flag-england.PNG" height="20px" width="30px">
+                                </a>
+                                <div class="dropdown-menu float-right bg-light">
+                                    <a class="dropdown-item" href="#">
+                                        <span>English</span>
+                                        <img src="images/flag-england.png" class="float-right" height="20px" width="30px">
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        <span>French</span>
+                                        <img src="images/flag-france.png" class="float-right" height="20px" width="30px">
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        <span>Italian</span>
+                                        <img src="images/flag-italy.png" class="float-right" height="20px" width="30px">
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        <span>Russian</span>
+                                        <img src="images/flag-russia.png" class="float-right" height="20px" width="30px">
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        <span>Spanish</span>
+                                        <img src="images/flag-spain.png" class="float-right" height="20px" width="30px">
+                                    </a>
+                                </div>
+                            </li>
+
+                            <li class="pl-4 pr-3 py-2 mt-1 dropdown">
+                                <a href="#" class="nav-link text-dark" data-toggle="dropdown">
+                                    <i class="far fa-envelope text-white fa-lg"></i>
+                                    <span class="badge badge-danger headerBadge">22</span>
+                                </a>
+                                <div class="dropdown-menu">
+                                    <p class="dropdown-item bg-light" href="#">
+                                        <strong>Messages</strong>
+                                        <span class="badge badge-danger float-right">22</span>
+                                    </p>
+                                    <a class="dropdown-item d-flex flex-row" href="#">
+                                        <img src="images/person.jpg" class="rounded-circle pr-2" height="40px">
+                                        <div>
+                                            <span>Charles M. Jones</span>
+                                            <p><small>Paaji changa Ji..</small></p>
+                                        </div>
+                                    </a>
+                                    <a class="dropdown-item d-flex flex-row" href="#">
+                                        <img src="images/person.jpg" class="rounded-circle pr-2" height="40px">
+                                        <div>
+                                            <span>Thomas J. Mimms</span>
+                                            <p><small>Hello Ji..Sasrikal</small></p>
+                                        </div>
+                                    </a>
+                                    <a class="dropdown-item d-flex flex-row" href="#">
+                                        <img src="images/person.jpg" class="rounded-circle pr-2" height="40px">
+                                        <div>
+                                            <span>Luis M. Konrad</span>
+                                            <p><small>Paaji changa Ji..</small></p>
+                                        </div>
+                                    </a>
+                                    <a class="dropdown-item" href="#">View More...</a>
+                                </div>
+                            </li>
+
+                            <li class="py-2 mt-1 dropdown">
+                                <a href="#" class="nav-link text-dark" id="notifications" data-toggle="dropdown">
+                                    <i class="far fa-bell text-white fa-lg"></i>
+                                    <span class="badge  badge-success headerBadge">5</span>
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="notifications">
+                                    <p class="dropdown-item bg-light" href="#">
+                                        <strong>Notification</strong>
+                                        <span class="badge badge-danger float-right">5</span>
+                                    </p>
+                                    <a class="dropdown-item d-flex" href="#">
+                                        <img src="images/order.PNG" class="rounded-circle pr-2" height="40px">
+                                        <div>
+                                            <span>Your order is placed</span>
+                                            <p><small>Paaji changa Ji..</small></p>
+                                        </div>
+                                    </a>
+                                    <a class="dropdown-item d-flex" href="#">
+                                        <img src="images/message.PNG" class="rounded-circle pr-2" height="40px">
+                                        <div>
+                                            <span>New message recieved</span>
+                                            <p><small>Paaji changa Ji..</small></p>
+                                        </div>
+                                    </a>
+                                    <a class="dropdown-item d-flex" href="#">
+                                        <img src="images/shipped.PNG" class="rounded-circle pr-2" height="40px">
+                                        <div>
+                                            <span>Your item is shipped</span>
+                                            <p><small>Paaji changa Ji..</small></p>
+                                        </div>
+                                    </a>
+                                    <a class="dropdown-item" href="#">View More...</a>
+                                </div>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link text-dark" data-toggle="dropdown">
+                                    <img src="images/person.jpg" height="40px" class="rounded-circle pt-2">
+                                </a>
+                                <div class="dropdown-menu">
+                                    <p class="dropdown-item bg-light" href="#">
+                                        <strong>Welcome</strong>
+                                    </p>
+                                    <a class="dropdown-item d-flex" href="#">
+                                        <i class="fas fa-md pr-3 fa-user-circle pt-2 text-muted"></i>
+                                        <span class="pb-1">Profile</span>
+                                    </a>
+                                    <a class="dropdown-item d-flex" href="#">
+                                        <i class="fas fa-wallet fa-md pr-3 pt-2 text-muted"></i>
+                                        <span class="pb-1">My Wallet</span>
+                                    </a>
+                                    <a class="dropdown-item d-flex" href="#">
+                                        <i class="fas fa-cog fa-md pr-3 pt-2 text-muted"></i>
+                                        <span class="pb-1">Settings</span>
+                                        <span class="badge ml-4 badge-success">5</span>
+                                    </a>
+                                    <a class="dropdown-item d-flex border-bottom" href="#">
+                                        <i class="fas fa-unlock-alt fa-md pr-3 pt-2 text-muted"></i>
+                                        <span class="pb-1">Lock Screen</span>
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="fas fa-sign-out-alt fa-md pr-3 pt-2 text-muted"></i>
+                                        <span class="pb-1">Logout</span>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-10 p-3">
+                        <h2>Dashboard</h2>
+                    </div>
+                    <div class="col-2 pt-4">Annex / Dashboard</div>
+                </div>
+                <div class="row">
+                    <div class="card ml-3">
+                        <div class="row">
+                            <div class="col-3">
+                                <div class="ml-3 my-4 mr-3">
+                                    <img src="images/visits.PNG" class="rounded-circle" height="60px">
+                                </div>
+                            </div>
+                            <div class="col-5 my-2 pt-3 pl-4 text-center">
+                                <div class="card-block">
+                                    <div class="card-title">
+                                        <h4>$18090 </h4>
+                                        <p>Visits Today</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4 py-4 text-danger text-center">
+                                <i class="fas fa-arrow-down pr-4"></i>
+                                <p class="pr-4">5.26%</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card ml-3">
+                        <div class="row">
+                            <div class="col-3">
+                                <div class="ml-3 my-4 mr-3">
+                                    <img src="images/users.PNG" class="rounded-circle" height="60px">
+                                </div>
+                            </div>
+                            <div class="col-5 my-2 pt-3 pl-4 text-center">
+                                <div class="card-block">
+                                    <div class="card-title">
+                                        <h4>562</h4>
+                                        <p>New Users</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4 py-4 text-success text-center">
+                                <i class="fas fa-arrow-up pr-4"></i>
+                                <p class="pr-4">8.68%</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card ml-3">
+                        <div class="row">
+                            <div class="col-3 mt-2">
+                                <div class="ml-3 my-3 mr-3"><img src="images/orders.PNG" class="rounded-circle" height="60px">
+                                </div>
+                            </div>
+                            <div class="col-5 my-2 pt-3 pl-4 text-center">
+                                <div class="card-block">
+                                    <div class="card-title">
+                                        <h4>7514 </h4>
+                                        <p>New Orders</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4 py-4 text-danger text-center">
+                                <i class="fas fa-arrow-down pr-4"></i>
+                                <p class="pr-4">2.35%</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card ml-3">
+                        <div class="row">
+                            <div class="col-3">
+                                <div class="ml-3 my-4 mr-3">
+                                    <img src="images/sales.PNG" class="rounded-circle" height="60px">
+                                </div>
+                            </div>
+                            <div class="col-5 my-2 pt-3 pl-4 text-center">
+                                <div class="card-block">
+                                    <div class="card-title">
+                                        <h4>$32874</h4>
+                                        <p>Total Sales</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4 py-4 text-success text-center">
+                                <i class="fas fa-arrow-up pr-4"></i>
+                                <p class="pr-4">2.35%</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-8 mt-4">
+                        <img src="images/graph.PNG">
+                    </div>
+
+                    <div class="col-4 mt-4 ml-0">
+                        <div class="card">
+                            <div class="card-body ml-2">
+                                <a href="#" class="btn btn-primary btn-sm float-right">More Info</a>
+                                <span class="text-dark"><strong>Revenue By Country</strong></span>
+                                <ul class="list-unstyled list-inline text-center mt-4">
+                                    <li class="list-inline-item">
+                                        <p><i class="mdi mdi-checkbox-blank-circle text-primary mr-2"></i>Canada</p>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <p><i class="mdi mdi-checkbox-blank-circle text-info mr-2"></i>USA</p>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <p><i class="mdi mdi-checkbox-blank-circle text-greylight mr-2"></i>London</p>
+                                    </li>
+                                </ul>
+                                <img src="images/pie-chart.PNG" class="rounded-circle pl-4">
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <div class="row mt-4">
+                    <div class="col-4">
+                        <div class="card" id="twitter">
+                            <div class="card-body">
+                                <div class="row justify-content-center text-center">
+                                    <i class="fab fa-twitter fa-3x text-white pt-3"></i>
+                                </div>
+                                <div class="justify-content-center text-center">
+                                    <div class="row">
+                                        <div class="col-6 text-white">
+                                            <h2>54k</h2>
+                                            <p class="">Followers</p>
+                                        </div>
+                                        <div class="col-6 text-white">
+                                            <h2>44k</h2>
+                                            <p class="">Tweets</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card mt-3 purple">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-lg-12 text-center">
+                                        <i class="fab fa-facebook-f fa-3x py-3 text-white"></i>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <div class="col-sm-10 mx-auto text-white text-center">
+                                        <p>Lorem Ipsum is simply dummy text of the <strong>FACEBOOK</strong>  and typesetting industry.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-4">
+                        <div class="card bg-white">
+                            <div class="card-body new-user">
+                                <div class="row text-center">
+                                    <div class="col-6">
+                                        <h2><i class="mdi mdi-database mr-2 text-primary font-20"></i>5 TB</h2>
+                                        <span class="text-lightdark">Bandwidth usage</span>
+                                        <p><span class="text-muted"> <small>June 2018</small></span></p>
+                                    </div>
+                                    <div class="col-6">
+                                        <h2><i class="mdi mdi-download mr-2 text-success font-20"></i>5412</h2>
+                                        <span class="text-lightdark">Download count</span>
+                                        <p><span class="text-muted"><small>June 2018</small></span></p>
+                                    </div>
+                                </div>
+                                <div class="justify-content-center text-center">
+                                    <img src="images/morris-chart.PNG">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-4">
+                        <div class="card bg-white">
+                            <img src="images/polar-bear.PNG">  
+                            <div class="card-body purple">
+                                <div class="row">
+                                    <div class="col-7 align-self-center">
+                                        <div class="row">
+                                            <div class="col-lg-5 text-center">
+                                                <img src="images/cloud.PNG" class="pb-3">
+                                                <div class="text-white">SUNDAY 25<sup>th</sup></span></div>
+                                            </div>
+                                            <div class="col-7  text-center align-self-center">
+                                                <p class="mt-0 text-white">32°</strong></p>
+                                                <p class="text-white">Partly Cloudy</p>
+                                                <p class="text-white">15km/h </p> 
+                                                <p class="text-white">37%</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-5 align-self-center">
+                                        <div class="row">
+                                            <div class="col-6 text-center">
+                                                <span class="text-white">MON</span>
+                                            </div>
+                                            <div class="col-6 text-center">
+                                                <span class="text-white mt-0">TUE</span>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-3 mb-2">
+                                            <div class="col-6 text-center">
+                                                <img src="images/rain.PNG">
+                                            </div>
+                                            <div class="col-6 text-center">
+                                                <img src="images/rain-2.PNG">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-6 text-center">
+                                                    <span class="text-white">38°<i class="wi-degrees"></i></span>
+                                            </div>
+                                            <div class="col-6 text-center">
+                                                    <span class="text-white">32°<i class="wi-degrees"></i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </body>
+</html>
