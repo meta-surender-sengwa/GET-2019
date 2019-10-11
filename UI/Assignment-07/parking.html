@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Metacube Parking System</title>
+    
+    <link href="https://getbootstrap.com/docs/4.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="javascript.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="container">
+
+    <div id="navigation">
+        <nav>
+            <ul>
+                <li>
+                    <a href="#" onclick="registerationForm();return false;">Register</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <div id="main-head" class="my-1">
+        <h1>Metacube Parking System</h1>
+    </div>
+
+    <div class="image-logo my-1" id="cover-img">
+        <img src="parking.png" height="50%">
+    </div>
+
+    <div class="mt-1" id="contain">
+        <form>
+            <div class="" id="employee-name" style="display: none">
+                <div><label id="label-name">Hello !! May I know your name ?</label></div>
+                <div>
+                    <input type="text" class="form-control w-50 set-alignment" placeholder="Enter Your Name" name="emp-name" id="emp-name" required>
+                </div>
+                <div><label id="error-name" class="text-danger"></label></div>
+            </div>
+
+            <div class="form-group" id="employee-gender" style="display: none">
+                <div><label id="label-gender"></label></div>
+                <div>
+                    <input type="radio" name="emp-gender" value="Male">Male
+                    <input type="radio" name="emp-gender" value="Female">Female
+                </div>
+                <div><label id="error-gender" class="text-danger"></label></div>
+            </div>
+
+            <div class="form-group" id="employee-email" style="display: none">
+                <div><label  id="label-email">Please enter your Email ID</label></div>
+                <div>
+                    <input type="email" class="form-control w-50 set-alignment" placeholder="Enter Your Email Address" name="emp-email" id="emp-email" type="emp-mail" required>
+                </div>
+                <div><label id="error-email" class="text-danger"></label></div>
+            </div>
+
+            <div class="form-group" id="employee-password" style="display: none">
+                <div><label id="label-password">Give a strong password</label></div>
+                <div>
+                    <input type="Password" onkeyup="validatePassword()" class="form-control w-50 set-alignment" placeholder="Enter Password" name="emp-pass" id="emp-pass" required>
+                </div>
+                <div><label id="error-password" class="text-danger"></label></div>
+                <div>
+                    <input type="Password" class="form-control w-50 set-alignment" placeholder="Re-enter Your Password" name="confirm-pass"  id="confirm-pass" required>
+                </div>
+                <div><label id="error-confirm" class="text-danger"></label></div>
+            </div>
+
+            <div class="form-group" id="employee-contact" style="display: none">
+                <div><label id="label-contact">May I know your contact number</label></div>
+                <div>
+                    <input type="text" class="form-control w-50 set-alignment" placeholder="Enter Your Contact Number" name="emp-contact" id="emp-contact" maxlength="10" required>
+                </div>
+                <div><label id="error-contact" class="text-danger"></label></div>
+            </div>
+
+            <div class="form-group next" id="employee-buttons">
+                <div id="next1" style="display: none">
+                    <button type="button" class="btn btn-success mt-2" onclick="vehicleForm()">Register</button>
+                </div>
+                <div id="button-next" style="display: none">
+                    <button type="button" onclick="onBlurForm1()" class="btn btn-primary">Next</button>
+                </div>
+                <div id="button-back" style="display: none">
+                    <button type="button" onclick="backToPrevious()" class="btn btn-primary">Back</button>
+                </div>
+            </div>
+        </form>
+
+
+        <form>
+            <div class="form-group" id="vehicle-name" style="display: none">
+                <div><label id="label-vname">May I know name of your Vehicle ?</label></div>
+                <div>
+                    <input type="text" class="form-control w-50 set-alignment" placeholder="Enter Vehicle Name" name="veh-name" id="veh-name" required>
+                </div>
+                <div><label id="error-vname" class="text-danger"></label></div>
+            </div>
+
+            <div class="form-group" id="vehicle-type" style="display: none">
+                <div><label id="label-vtype"></label></div>
+                <select class="form-control w-50 set-alignment" id="veh-type" name="veh-type" >
+                    <option value="" selected disabled hidden>Choose Type</option>
+                    <option value="Cycle">Cycle</option>
+                    <option value="Motocycle">Motocycle</option>
+                    <option value="Car">Car</option>
+                </select>
+                <div><label id="error-vtype" class="text-danger"></label></div>
+            </div>
+
+            <div class="form-group" id="vehicle-number" style="display: none">
+                <div><label id="label-vnumber">Hello !! May I know your name ?</label></div>
+                <div>
+                    <input type="text" class="form-control w-50 set-alignment" placeholder="Enter Vehicle Number" name="veh-number" id="veh-number" required>
+                </div>
+                <div><label id="error-vnumber" class="text-danger"></label></div>
+            </div>
+
+            <div class="form-group" id="vehicle-identification" style="display: none">
+                <div><label id="label-videntity">Hello !! May I know your name ?</label></div>
+                <div>
+                    <textarea class="form-control w-50 set-alignment" placeholder="Enter Vehicle Identification" rows="3" name="veh-identity" id="veh-identity" required></textarea>
+                </div>
+                <div><label id="error-videntity" class="text-danger"></label></div>
+            </div>
+
+            <div class="form-group next">
+                <div style="display: none" id="next2">
+                    <button type="button" onclick="planForm()" class="btn btn-success mt-2">Register</button>
+                </div>
+                <div id="veh-button-next" style="display: none">
+                    <button type="button" onclick="onBlurForm2()" class="btn btn-primary">Next</button>
+                </div>
+                <div id="veh-button-back" style="display: none">
+                    <button type="button" onclick="backToPrevious()" class="btn btn-primary">Back</button>
+                </div>
+            </div>
+        </form>
+
+
+        <form>
+            <div style="display:none" id="select-plan">
+                <h2>Choose your plan</h2>
+            </div>
+
+            <div class="form-group" id="currency-type" style="display: none">
+                <select id="currency" class="form-control w-50 set-alignment" onchange="showPrice()">
+                    Select A Currency
+                    <option value="" selected disabled hidden>Select Currency</option>
+                    <option value="INR">INR</option>
+                    <option value="USD">USD</option>
+                    <option value="YEN">YEN</option>
+                </select>
+            </div>
+
+            <div class="form-group" id="plan" style="display: none">
+                <div>
+                    <input type="radio" onclick="showSubmitButton()" name="plan-type"> Daily -  
+                    <label id="daily"></label>
+                </div>
+                
+                <div>
+                    <input type="radio"  onclick="showSubmitButton()" name="plan-type"> Monthly - 
+                    <label id="monthly"></label>
+                </div>
+                
+                <div>
+                    <input type="radio"  onclick="showSubmitButton()" name="plan-type"> Yearly - 
+                    <label id="yearly"></label>
+                </div>
+            </div>
+
+            <div class="form-group next" style="display: none" id="next3">
+                <button type="button" onclick="submitForm()" class="btn btn-success mt-2">Submit</button>
+            </div>
+        </form>
+
+        <div>
+            <h1><label id="result"></label></h1>
+        </div>
+    </div>
+
+</body>
+</html>
