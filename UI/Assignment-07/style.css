@@ -33,6 +33,15 @@ li a:hover {
 }
 
 div {
+  float: center;
   text-align: center;
   padding: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  width: 100%;
+}
+
+.set-alignment {
+  display: inline;
+  float: center;
 }
