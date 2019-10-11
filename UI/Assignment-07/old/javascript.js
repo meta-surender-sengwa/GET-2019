@@ -5,9 +5,9 @@ var vehicleType;
 
 var idArray = [];
 
-var employeeFormBackgroundColour = "#7FDBFF";
-var vehicleFormBackgroundColour = "#FF851B";
-var planFormBackgroundColour = "#DDDDDD";
+var employeeFormBackgroundColour = "#E0F0FB";
+var vehicleFormBackgroundColour = "#FFE8DC";
+var planFormBackgroundColour = "#DFDFDF";
 
 var convertToUSD = 71.74;
 var convertToYEN = 0.68;
@@ -27,6 +27,7 @@ function registerationForm() {
     document.getElementById("button-back").style.display = "block";
 
     document.getElementById("emp-name").focus();
+    idArray.push()
 
     currentField = "name";
     currentForm = 1;
@@ -213,6 +214,7 @@ function onBlurForm2() {
 
             label.innerHTML = " whats the type of " + vehicleName;
 
+
             document.getElementById("vehicle-name").style.display = "none";
             document.getElementById("vehicle-type").style.display = "block";
             document.getElementById("veh-button-back").style.display = "block";
@@ -285,20 +287,21 @@ function planForm() {
 /* showing available plans according to vehicle selected */
 function showPrice() {
 
+    label.style.display = "none";
     currency = document.getElementById("currency").value;
     plan = document.getElementById("plan").value;
 
     document.getElementById("plan").style.display = "block";
     
     var vehicleType = document.getElementById("veh-type").value;
+    var daily, monthly , yearly;
 
-    if(vehicleType == "Cycle")  {
-        var daily = 5;
-        var monthly = 100;
-        var yearly = 500;
-    }
+   if(vehicleType == "Cycle")  {
+        daily = 5;
+        monthly = 100;
+        yearly = 500;
 
-    if (vehicleType == "Motocycle") {
+    } else if (vehicleType == "Motocycle") {
         daily = 10;
         monthly = 200;
         yearly = 1000;
@@ -327,14 +330,16 @@ function showPrice() {
             document.getElementById("monthly").innerHTML = (monthly / convertToYEN).toFixed(2);
             document.getElementById("yearly").innerHTML = (yearly / convertToYEN).toFixed(2);
             break;
-    }
+    }   
+}
 
+function showSubmitButton() {
     document.getElementById("next3").style.display = "block";
 }
 
 /* on submit of plan and pricing form */
 function submitForm() {
-
+    label.style.display = "block";
     label.innerHTML = "Thank you for registering";
 
     document.getElementById("main-head").style.display = "none";
